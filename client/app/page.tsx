@@ -3,7 +3,7 @@ export default function Home() {
     <>
       {/* hero section */}
       <section id="/" className="mt-5">
-        <div className="container ">
+        <div className="container">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
             cum, saepe velit eum similique tenetur error quam id molestias! Ab
