@@ -1,29 +1,38 @@
 .sidebar {
-  height: 40vh;
-  width: 150px;
-  border-radius: 20px;
-  border: 1px solid rgb(3, 3, 3);
-  margin-left: 20px;
-  margin-top: 150px;
+  width: 220px;
   position: fixed;
-  padding: 8px;
-  background-color: black;
-  box-shadow: 2px 2px 10px white;
-}
-
-.link {
-  display: block;
-  padding: 8px;
-  text-decoration: none;
-  color: white;
+  right: 0;
+  top: 200px;
+  border: 1px solid gray;
   border-radius: 10px;
+  margin: 10px;
+  box-shadow: 1px 1px 1px 2px rgb(71, 70, 70);
+  background-color: black;
 }
-
-.active {
-  background-color: rgb(107, 103, 103);
-  color: white;
+@media (min-width: 768px) {
+  body {
+    margin-right: 220px;
+  }
+}
+@media (max-width: 767.98px) {
+  body {
+    margin-bottom: 70px;
+  }
 }
 
 .link:hover {
-  background-color: rgb(197, 192, 192);
+  background-color: rgb(131, 128, 128);
+  border-radius: 10px;
+  margin: 6px;
+  transition: all 0.5 ease;
+}
+.active {
+  background-color: rgb(172, 168, 168);
+  border-radius: 10px;
+  margin: 6px;
+  color: white;
+}
+
+.logo {
+  margin-left: 60px;
 }

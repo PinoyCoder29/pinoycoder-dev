@@ -1,8 +1,9 @@
 import { Poppins } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-// import "./globals.css";
+import "./globals.css";
 import Sidebar from "@/components/layout/Sidebar/page";
+import MainHeader from "@/components/layout/MainHeader/page";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -17,14 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <div className="container-fluid">
-          <div className="row bg-dark">
-            <div className="col-md-10 ">{children}</div>
-            <div className="col-md-2">
-              <Sidebar />
-            </div>
-          </div>
+        <Sidebar />
+        <div className="main-wrapper">
+          <MainHeader />
         </div>
+        <main className="px-3 py-5"> {children}</main>
       </body>
     </html>
   );
