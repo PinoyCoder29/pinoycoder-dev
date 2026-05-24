@@ -20,7 +20,7 @@
 }
 
 body {
-  background-color: black;
+  background-color: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -28,6 +28,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  background-color: black;
 }
 .content {
   padding-bottom: 100px;
@@ -36,4 +37,67 @@ body {
 section {
   border: 1px solid white;
   border-radius: 25px;
+}
+
+.heroSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+
+  background: linear-gradient(
+    45deg,
+    rgb(12, 12, 12),
+    rgb(61, 21, 16),
+    rgb(21, 21, 22)
+  );
+}
+
+.imageWrapper {
+  width: min(500px, 90vw);
+  height: min(500px, 90vw);
+
+  position: relative;
+  display: block;
+}
+
+/* 🔥 ADD THIS */
+.heroImage {
+  position: relative;
+  display: block;
+}
+.heroImage Image {
+  display: block;
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(30px);
+  }
+}
+
+.bg-Text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: clamp(30px, 10vw, 200px);
+  font-weight: 900;
+
+  opacity: 0.5;
+  color: white;
+  text-align: center;
+  pointer-events: none;
+  margin-top: 16px; /* ← gap between image and text */
+
+  animation: float 3s ease-in-out infinite;
+
+  /* remove these */
+  /* position: absolute; */
+  /* inset: 0; */
+  /* z-index: 0; */
 }

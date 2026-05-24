@@ -12,7 +12,7 @@ export const navlinks: navlink[] = [
   },
   {
     name: "About",
-    path: "/about",
+    path: "/#about",
     icon: "bi-door-lock",
   },
 ];

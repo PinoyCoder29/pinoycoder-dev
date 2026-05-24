@@ -17,12 +17,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={`${poppins.className}`}>
         <Sidebar />
         <div className="main-wrapper">
           <MainHeader />
         </div>
-        <main className="px-3 py-5"> {children}</main>
+        <main className="px-4 py-5"> {children}</main>
       </body>
     </html>
   );

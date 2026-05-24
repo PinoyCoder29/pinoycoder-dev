@@ -9,6 +9,9 @@ import Image from "next/image";
 export default function Sidebar() {
   const pathname = usePathname();
 
+  const handleClick = (path: string) => {
+    if (window.location.pathname + window.location.hash === path) return;
+  };
   return (
     <>
       <aside
@@ -30,6 +33,7 @@ export default function Sidebar() {
                 <Link
                   href={item.path}
                   className={` nav-link px-5 text-light ${styles.link} ${isActive ? styles.active : ""}`}
+                  onClick={() => handleClick(item.path)}
                 >
                   {item.name}
                 </Link>
