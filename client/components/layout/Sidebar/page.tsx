@@ -25,9 +25,10 @@ export default function Siderbar() {
               <li key={item.path} className="nav-item ">
                 <a
                   href={item.path}
-                  className={`nav-link text-light ${styles.navLink} ${active === item.path ? styles.active : ""}`}
+                  className={`gap-2 d-flex nav-link text-light ${styles.navLink} ${active === item.path ? styles.active : ""}`}
                   onClick={() => setActive(item.path)}
                 >
+                  <i className={`bi ${item.icon}`}></i>
                   {item.name}
                 </a>
               </li>

@@ -7,11 +7,11 @@ export const navLinks: navlink[] = [
   {
     name: "Home",
     path: "#home",
-    icon: "bi-door-lock",
+    icon: "bi-house",
   },
   {
     name: "About",
     path: "#about",
-    icon: "bi-door-lock",
+    icon: "bi-person",
   },
 ];
