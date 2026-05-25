@@ -1,14 +1,15 @@
 .sidebar {
   width: 220px;
-  position: fixed;
   right: 0;
-  top: 200px;
-  border: 1px solid gray;
-  border-radius: 10px;
-  margin: 10px;
-  box-shadow: 1px 1px 1px 2px rgb(71, 70, 70);
-  background-color: black;
+  position: fixed;
+  border-radius: 15px;
+  border: 1px solid rgb(107, 99, 99);
+  margin-right: 10px;
+  top: 35vh;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 1px 1px 1px 2px white;
 }
+
 @media (min-width: 768px) {
   body {
     margin-right: 220px;
@@ -16,23 +17,35 @@
 }
 @media (max-width: 767.98px) {
   body {
-    margin-bottom: 70px;
+    margin-bottom: 2.5rem;
   }
 }
 
-.link:hover {
-  background-color: rgb(131, 128, 128);
-  border-radius: 10px;
-  margin: 6px;
-  transition: all 0.5 ease;
-}
-.active {
-  background-color: rgb(172, 168, 168);
-  border-radius: 10px;
-  margin: 6px;
+.navLink:hover {
+  background-color: rgb(80, 75, 75);
   color: white;
+  margin: 5px;
+  border-radius: 14px;
 }
 
-.logo {
-  margin-left: 60px;
+.active {
+  background-color: grey;
+  color: white;
+  margin: 5px;
+  border-radius: 14px;
+}
+
+.mobilebar {
+  background-color: rgb(75, 69, 69);
+}
+.mobileActive {
+  background-color: rgb(22, 21, 21);
+  padding: 10px;
+  border-radius: 10px;
+  color: rgb(36, 34, 34);
+}
+.mobileLink:hover {
+  background-color: rgb(88, 85, 85);
+  padding: 10px;
+  border-radius: 10px;
 }

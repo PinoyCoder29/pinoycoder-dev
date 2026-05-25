@@ -3,16 +3,15 @@ export type navlink = {
   path: string;
   icon: string;
 };
-
-export const navlinks: navlink[] = [
+export const navLinks: navlink[] = [
   {
     name: "Home",
-    path: "/",
+    path: "#home",
     icon: "bi-door-lock",
   },
   {
     name: "About",
-    path: "/#about",
+    path: "#about",
     icon: "bi-door-lock",
   },
 ];

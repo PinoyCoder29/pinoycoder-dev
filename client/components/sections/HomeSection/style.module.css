@@ -1,0 +1,75 @@
+.homeSection {
+  border: 1px solid rgb(124, 119, 119);
+
+  padding: 16px;
+  margin-top: 2rem;
+  border-radius: 2rem;
+  box-shadow: 1px 1px 2px 3px rgb(109, 105, 105);
+  min-height: 60vh;
+}
+.homeContainer {
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(
+    50deg,
+    rgb(3, 3, 3),
+    rgb(114, 56, 56),
+    rgb(3, 3, 3)
+  );
+  min-height: auto;
+  gap: 20px;
+}
+
+.homeTitle {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.homeTitle h1 {
+  font-size: clamp(0.2rem, 3vw, 8rem);
+}
+.homeTitle p {
+  max-width: 4 00px;
+  font-size: clamp(0.2rem, 2vw, 0.8rem);
+}
+
+.heroProfile {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+.profileName {
+  position: absolute;
+  top: 35%;
+  z-index: 1;
+  font-size: clamp(3.5rem, 6vw, 6rem);
+  animation: floutUpandDown 3s ease-in-out infinite;
+  font-width: 9 00;
+}
+@keyframes floutUpandDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.heroPicture {
+  width: clamp(360px, 40vw, 560px);
+  z-index: 2;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .homeContainer {
+    flex-direction: column;
+    text-align: start;
+  }
+}

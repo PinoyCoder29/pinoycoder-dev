@@ -1,63 +1,55 @@
 "use client";
-import { navlinks } from "@/config/navLinks";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { navLinks } from "@/config/navLinks";
 import styles from "./style.module.css";
+import { useState } from "react";
 import { mobileLinks } from "@/config/mobileLinks";
 import Image from "next/image";
+export default function Siderbar() {
+  const [active, setActive] = useState("#home");
 
-export default function Sidebar() {
-  const pathname = usePathname();
-
-  const handleClick = (path: string) => {
-    if (window.location.pathname + window.location.hash === path) return;
-  };
   return (
     <>
-      <aside
-        className={`d-none d-md-block ${styles.sidebar}  text-light ms-auto`}
-      >
-        <Image
-          src="/pinoycoder.png"
-          width={100}
-          height={70}
-          alt="Pinoycoder logo"
-          className={styles.logo}
-        ></Image>
-        <ul className={`nav flex-column shadow ${styles.navItem}`}>
-          {navlinks.map((item) => {
-            const isActive = pathname === item.path;
-
+      {/* desktop */}
+      <aside className={`d-none d-md-block ${styles.sidebar}`}>
+        <ul className={`nav flex-column gap-1 ${styles.navItem} `}>
+          <div className="text-center mb-2">
+            <Image
+              alt="logo"
+              src="/pinoycoder.png"
+              width={85}
+              height={60}
+            ></Image>
+          </div>
+          {navLinks.map((item) => {
             return (
-              <li key={item.path} className="nav-item">
-                <Link
+              <li key={item.path} className="nav-item ">
+                <a
                   href={item.path}
-                  className={` nav-link px-5 text-light ${styles.link} ${isActive ? styles.active : ""}`}
-                  onClick={() => handleClick(item.path)}
+                  className={`nav-link text-light ${styles.navLink} ${active === item.path ? styles.active : ""}`}
+                  onClick={() => setActive(item.path)}
                 >
                   {item.name}
-                </Link>
+                </a>
               </li>
             );
           })}
         </ul>
       </aside>
+
       {/* mobile */}
       <nav
-        className={`${styles.fixedButton} d-md-none fixed-bottom border-top bg-dark text-light`}
+        className={`navbar navbar-expand-md border-top d-md-none fixed-bottom ${styles.mobilebar}`}
       >
-        <ul className="justify-content-around py-3 nav">
+        <ul className="navbar-nav d-flex flex-row justify-content-around w-100">
           {mobileLinks.map((item) => {
-            const isActive = pathname === item.path;
             return (
-              <li key={item.path}>
-                <Link
-                  href={item.path}
-                  className={`text-light nav-link ${isActive ? styles.active : ""}`}
+              <li className="nav-item " key={item.path}>
+                <a
+                  className={`nav-link text-light ${styles.mobileLink} ${active === item.path ? styles.mobileActive : ""}`}
+                  onClick={() => setActive(item.path)}
                 >
-                  {" "}
-                  {item.name}{" "}
-                </Link>
+                  {item.name}
+                </a>
               </li>
             );
           })}

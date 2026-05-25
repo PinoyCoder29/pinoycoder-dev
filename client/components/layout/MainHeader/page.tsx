@@ -1,19 +1,29 @@
 import Image from "next/image";
+import styles from "./style.module.css";
+import { socialLinks } from "@/config/socialLink";
 
 export default function MainHeader() {
   return (
-    <nav className="navbar navbar-expand-md px-3     fixed-top">
-      <div className="container-fluid justify-content-start ">
+    <nav className={`navbar navbar-expand-md fixed-top ${styles.nav}`}>
+      <div className="container-fluid d-flex justify-content-between align-items-center">
+        {/* LEFT SIDE */}
         <div className="d-flex align-items-center gap-2">
-          <Image
-            src="/pinoycoder.png"
-            alt="PinoyCoder Logo"
-            width={70}
-            height={70}
-            priority
-          />
+          <Image alt="logo" src="/pinoycoder.png" width={60} height={40} />
+          <h1 className="navbar-brand text-light mb-0">PinoyCoder</h1>
+        </div>
 
-          <span className="text-light fw-bold fs-5">PinoyCoder</span>
+        {/* RIGHT SIDE */}
+        <div className="d-flex gap-3">
+          {socialLinks.map((item) => (
+            <div key={item.name}>
+              <a href={item.path}>
+                <i
+                  className={`bi ${item.icon}`}
+                  style={{ color: item.color }}
+                ></i>
+              </a>
+            </div>
+          ))}
         </div>
       </div>
     </nav>
