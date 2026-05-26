@@ -1,4 +1,4 @@
-import AboutSection from "@/components/sections/AboutSection";
+import AboutSection from "@/components/sections/AboutSection/AboutSection";
 import HomeSection from "@/components/sections/HomeSection/page";
 
 export default function Home() {

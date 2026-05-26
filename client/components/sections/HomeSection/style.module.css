@@ -1,71 +1,96 @@
 .homeSection {
   border: 1px solid rgb(124, 119, 119);
-
   padding: 16px;
-  margin-top: 2rem;
   border-radius: 2rem;
   box-shadow: 1px 1px 2px 3px rgb(109, 105, 105);
-  min-height: 60vh;
+  min-height: fit-content;
+  margin: 2rem;
+  margin-bottom: 10rem;
 }
+
 .homeContainer {
   display: flex;
   justify-content: space-between;
   background: linear-gradient(
     50deg,
     rgb(3, 3, 3),
-    rgb(114, 56, 56),
+    rgb(97, 95, 95),
     rgb(3, 3, 3)
   );
   min-height: auto;
-  gap: 20px;
+  border-radius: 25px;
 }
 
 .homeTitle {
-  margin: 10px;
+  margin: 15px;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .homeTitle h1 {
   font-size: clamp(0.2rem, 3vw, 8rem);
 }
+
 .homeTitle p {
-  max-width: 4 00px;
+  max-width: 400px;
   font-size: clamp(0.2rem, 2vw, 0.8rem);
+}
+
+.homeTitle a {
+  width: fit-content;
+  border-radius: 10px;
+  padding: clamp(0.2rem, 0.4vw, 2.5rem);
+  border: none;
+  background-color: rgb(173, 168, 168);
+  margin-left: 10px;
+  color: black;
+  text-decoration: none;
 }
 
 .heroProfile {
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
-
+  align-items: flex-end;
+  min-width: 0;
   position: relative;
+  overflow: visible;
 }
+
 .profileName {
   position: absolute;
   top: 35%;
-  z-index: 1;
-  font-size: clamp(3.3rem, 6vw, 6rem);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 2;
+  font-size: clamp(1.5rem, 4vw, 8rem);
   animation: floutUpandDown 3s ease-in-out infinite;
-  font-width: 9 00;
+  font-weight: 900;
+  text-shadow: 10px 3px 50px rgba(6, 4, 119, 0.4);
 }
+
 @keyframes floutUpandDown {
   0% {
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
   }
   50% {
-    transform: translateY(-50px);
+    transform: translateX(-50%) translateY(-50px);
   }
   100% {
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
   }
 }
+
 .heroPicture {
-  width: clamp(340px, 40vw, 560px);
+  width: 100%;
+  max-width: 450px;
   z-index: 2;
   position: relative;
+  object-fit: contain;
+  display: block;
 }
 
 @media (max-width: 768px) {
@@ -76,5 +101,11 @@
   .homeTitle {
     max-width: 400px;
     margin: 20px;
+  }
+  .heroPicture {
+    max-width: 100%;
+  }
+  .profileName {
+    font-size: clamp(1.5rem, 8vw, 4rem);
   }
 }
