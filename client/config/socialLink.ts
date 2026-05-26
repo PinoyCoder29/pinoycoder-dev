@@ -9,13 +9,13 @@ export const socialLinks: socialLink[] = [
     name: "Facebook",
     icon: "bi-facebook",
     path: "https://www.facebook.com/jayvee.bico.16",
-    color: "#ffffff",
+    color: "#103aac",
   },
   {
     name: "Messenger",
     icon: "bi-messenger",
     path: "https://m.me/",
-    color: "#ffffff",
+    color: "#16939c",
   },
   {
     name: "GitHub",
@@ -27,6 +27,6 @@ export const socialLinks: socialLink[] = [
     name: "Instagram",
     icon: "bi-instagram",
     path: "https://instagram.com/your-username",
-    color: "#ffffff",
+    color: "#af811f",
   },
 ];

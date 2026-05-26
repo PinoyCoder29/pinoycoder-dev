@@ -14,3 +14,6 @@ body {
   color: white;
   font-family: "DM Sans", sans-serif;
 }
+section {
+  scroll-margin-top: 80px;
+}

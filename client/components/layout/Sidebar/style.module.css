@@ -36,7 +36,12 @@
 }
 
 .mobilebar {
-  background-color: rgb(75, 69, 69);
+  background: linear-gradient(
+    45deg,
+    rgb(43, 43, 43),
+    rgb(104, 100, 100),
+    rgb(43, 43, 43)
+  );
 }
 .mobileActive {
   background-color: rgb(22, 21, 21);

@@ -2,7 +2,7 @@
   display: flex;
   gap: 20px;
   justify-content: space-between;
-  margin: 2rem;
+  margin: 1rem;
 }
 .aboutText {
   text-align: center;
@@ -27,7 +27,7 @@
   border-radius: 50%;
   max-width: 100px;
   width: 100%;
-  top: 40px;
+  top: 23px;
 }
 
 .topBox {
@@ -44,7 +44,7 @@
 .bottomBox {
   border-radius: 2rem;
   border: 1px solid white;
-
+  margin: 0;
   min-height: auto;
   padding: 25px 0 0 20px;
   background: linear-gradient(
@@ -53,6 +53,9 @@
     rgb(104, 100, 100),
     rgb(43, 43, 43)
   );
+}
+.bottomBox p {
+  margin: 0;
 }
 .aboutName {
   font-size: clamp(0.4rem, 2vw, 2rem);
@@ -64,4 +67,85 @@
 .aboutSkills {
   flex: 1;
   border: 1px solid rgb(71, 71, 71);
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px;
+  background-color: rgb(7, 7, 7);
+}
+
+.socialScroll {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 9rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.socialWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 55px;
+  margin-top: 57px;
+  width: max-content;
+  animation: scrollRight 10s linear infinite;
+}
+.socialItem {
+  display: flex;
+  border-radius: 15px;
+  font-size: clamp(2rem, 3vw, 6rem);
+  align-items: center;
+}
+.skillsHeader {
+  flex-shrink: 0;
+}
+.skillsTitle {
+  color: white;
+  text-align: center;
+  background-color: grey;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  font-size: clamp(0.3rem, 1vw, 1rem);
+}
+.skillsScroll {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.techItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: clamp(0.3rem, 2vw, 1rem);
+}
+
+.techWrapper {
+  display: flex;
+  margin-top: 2.4rem;
+
+  animation: scrollLeft 10s linear infinite;
+
+  flex-direction: column;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-70%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-70%);
+  }
 }
