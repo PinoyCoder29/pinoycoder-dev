@@ -11,7 +11,7 @@
 }
 
 .aboutContent {
-  flex: 4;
+  flex: 3.8;
   position: relative;
   border-radius: 25px;
   border: 1px solid white;
@@ -65,7 +65,7 @@
   color: rgb(168, 166, 166);
 }
 .aboutSkills {
-  flex: 1;
+  flex: 1.2;
   border: 1px solid rgb(71, 71, 71);
   height: auto;
   overflow: hidden;
@@ -86,7 +86,7 @@
 .socialWrapper {
   display: flex;
   flex-direction: row;
-  gap: 55px;
+  gap: clamp(2rem, 5vw, 4rem);
   margin-top: 57px;
   width: max-content;
   animation: scrollRight 10s linear infinite;
@@ -120,7 +120,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-size: clamp(0.3rem, 2vw, 1rem);
+  font-size: clamp(0.3rem, 2vw, 1.4rem);
 }
 
 .techWrapper {
@@ -132,20 +132,23 @@
   flex-direction: column;
 }
 
-@keyframes scrollLeft {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-70%);
-  }
-}
+/* Sa socialWrapper at techWrapper, i-duplicate mo ang items sa HTML,
+   tapos gamitin ang -50% instead of -70% */
 
 @keyframes scrollRight {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-70%);
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
   }
 }
