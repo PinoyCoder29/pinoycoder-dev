@@ -107,7 +107,7 @@
   margin: 10px;
   padding: 10px;
   border-radius: 15px;
-  font-size: clamp(0.3rem, 1vw, 1rem);
+  font-size: clamp(0.2rem, 1vw, 1rem);
 }
 .skillsScroll {
   flex: 1;
