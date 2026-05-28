@@ -133,7 +133,7 @@
 }
 
 /* Sa socialWrapper at techWrapper, i-duplicate mo ang items sa HTML,
-   tapos gamitin ang -50% instead of -70% */
+    tapos gamitin ang -50% instead of -70% */
 
 @keyframes scrollRight {
   0% {
@@ -150,5 +150,23 @@
   }
   100% {
     transform: translateY(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutContainer {
+    gap: 10px;
+  }
+
+  .aboutContent {
+    flex: 2.5;
+  }
+
+  .aboutSkills {
+    flex: 1;
+  }
+
+  .socialWrapper {
+    gap: 1rem;
   }
 }

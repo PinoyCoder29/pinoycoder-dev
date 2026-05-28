@@ -47,11 +47,9 @@ export default function Siderbar() {
               <li className="nav-item " key={item.path}>
                 <a
                   href={item.path}
-                  className={`nav-link text-light ${styles.mobileLink} ${active === item.path ? styles.mobileActive : ""}`}
+                  className={`${item.icon} nav-link text-light ${styles.mobileLink} ${active === item.path ? styles.mobileActive : ""}`}
                   onClick={() => setActive(item.path)}
-                >
-                  {item.name}
-                </a>
+                ></a>
               </li>
             );
           })}

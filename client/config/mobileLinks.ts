@@ -6,18 +6,28 @@ export type mobileLink = {
 
 export const mobileLinks: mobileLink[] = [
   {
-    name: "About",
-    path: "#about",
-    icon: "",
-  },
-  {
     name: "Home",
     path: "#home",
-    icon: "",
+    icon: "bi-house-door",
+  },
+  {
+    name: "About",
+    path: "#about",
+    icon: "bi-person",
+  },
+  {
+    name: "Technologies",
+    path: "#technologies",
+    icon: "bi-cpu",
+  },
+  {
+    name: "Projects",
+    path: "#projects",
+    icon: "bi-kanban",
   },
   {
     name: "Contact",
     path: "#contact",
-    icon: "",
+    icon: "bi-envelope",
   },
 ];
