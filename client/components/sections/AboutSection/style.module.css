@@ -2,7 +2,6 @@
   display: flex;
   gap: 20px;
   justify-content: space-between;
-  margin: 1rem;
 }
 .aboutText {
   text-align: center;
@@ -166,7 +165,7 @@
   }
 
   .aboutSkills {
-    flex: 1;
+    flex: 1.7;
   }
 
   .socialWrapper {
