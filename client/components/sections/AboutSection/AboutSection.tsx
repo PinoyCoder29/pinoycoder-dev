@@ -16,6 +16,7 @@ export default function AboutSection() {
               <p>Pinoycoder</p>
               <p>Stay consistent, stay improving...</p>
               <div className={styles.socialScroll}>
+                {/* <h1 className={styles.socialName}>Social Media</h1> */}
                 <div className={styles.socialWrapper}>
                   {socialLinks.map((item) => {
                     return (
