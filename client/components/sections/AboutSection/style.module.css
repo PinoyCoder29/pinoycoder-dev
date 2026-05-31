@@ -166,7 +166,8 @@
 
 @media (max-width: 768px) {
   .aboutContainer {
-    gap: 10px;
+    gap: 5px;
+    margin: 0;
   }
 
   .aboutContent {
