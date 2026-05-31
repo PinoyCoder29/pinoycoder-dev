@@ -28,6 +28,6 @@ export const mobileLinks: mobileLink[] = [
   {
     name: "Contact",
     path: "#contact",
-    icon: "bi-envelope",
+    icon: "bi-person-rolodex",
   },
 ];

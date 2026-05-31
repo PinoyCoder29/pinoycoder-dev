@@ -24,4 +24,9 @@ export const navLinks: navlink[] = [
     path: "#projects",
     icon: "bi-kanban",
   },
+  {
+    name: "Contact",
+    path: "#contact",
+    icon: "bi-person-rolodex",
+  },
 ];
