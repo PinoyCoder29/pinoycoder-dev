@@ -166,9 +166,10 @@
 
 @media (max-width: 768px) {
   .section {
-    margin: 0;
+    margin: 0px;
   }
   .aboutContainer {
+    margin: 0;
     gap: 5px;
   }
 
@@ -177,7 +178,7 @@
   }
 
   .aboutSkills {
-    flex: 1.7;
+    flex: 2;
   }
 
   .socialWrapper {
