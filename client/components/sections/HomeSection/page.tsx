@@ -1,8 +1,17 @@
+"use client";
 import styles from "./style.module.css";
+import { motion } from "framer-motion";
 export default function HomeSection() {
   return (
     <>
-      <section id="home" className={`${styles.homeSection}`}>
+      <motion.section
+        initial={{ opacity: 0, x: -70 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4 }}
+        id="home"
+        className={`${styles.homeSection}`}
+      >
         <div className={`${styles.homeContainer}`}>
           <div className={`${styles.homeTitle}`}>
             <h1>Full-Stack Web Developer</h1>
@@ -23,7 +32,7 @@ export default function HomeSection() {
             <img src="/portfolio.png" className={`${styles.heroPicture}`}></img>
           </div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 }

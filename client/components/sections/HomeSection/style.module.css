@@ -26,6 +26,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  animation: floatFade 1s ease-in-out;
 }
 
 .homeTitle h1 {
@@ -90,6 +91,18 @@
   position: relative;
   object-fit: contain;
   display: block;
+  animation: floatFade 1s ease-in-out;
+}
+
+@keyframes floatFade {
+  0% {
+    transform: translateX(-70px);
+    opacity: 0.1;
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 @media (max-width: 768px) {

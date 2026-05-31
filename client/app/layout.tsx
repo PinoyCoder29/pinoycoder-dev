@@ -1,6 +1,7 @@
 import { Poppins } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import BootstrapClient from "./bootstrapClient";
 import "./globals.css";
 import Sidebar from "@/components/layout/Sidebar/page";
 import MainHeader from "@/components/layout/MainHeader/page";
@@ -21,6 +22,7 @@ export default function RootLayout({
         <link rel="icon" href="/pinoycoder.png" />
       </head>
       <body className={`${poppins.className}`}>
+        <BootstrapClient />
         <Sidebar />
         <div className="main-wrapper">
           <MainHeader />

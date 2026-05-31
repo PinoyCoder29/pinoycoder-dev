@@ -88,13 +88,14 @@
   overflow: hidden;
   width: 100%;
   height: 9rem;
-  align-items: center;
-  justify-content: start;
+  align-items: end;
+  justify-content: center;
   display: flex;
 }
 .socialWrapper {
   display: flex;
   flex-direction: row;
+
   gap: clamp(2rem, 5vw, 4rem);
   margin-top: 57px;
   width: max-content;
@@ -179,4 +180,83 @@
   .socialWrapper {
     gap: 1rem;
   }
+}
+
+.achievementsContainer {
+  margin: 1rem;
+  display: flex;
+  gap: 10px;
+}
+
+.achievementsContent {
+  flex: 1.5;
+  border: 1px solid white;
+  border-radius: 20px;
+
+  overflow: hidden; /* ← dagdag */
+  min-width: 0;
+}
+.achievementsTitle {
+  text-align: center;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: rgb(82, 78, 78);
+  margin: 10px;
+  font-size: clamp(0.5rem, 1vw, 2rem);
+}
+.carouselWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.carouselTrack {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carouselTrack img,
+.carouselTrack video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.carouselDots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.achievementsContent img,
+.achievementsContent video {
+  width: 100%;
+  display: block;
+  height: clamp(120px, 40vw, 400px);
+  object-fit: cover;
+}
+
+.achievementsDescription {
+  flex: 3.5;
+  border: 1px solid white;
+  border-radius: 25px;
+}
+
+.descriptionContent {
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem;
+}
+
+.descriptionTitle {
+  font-size: clamp(0.3rem, 2vw, 3rem);
+}
+.descriptionText {
+  font-size: clamp(0.3rem, 2vw, 1.5rem);
 }
