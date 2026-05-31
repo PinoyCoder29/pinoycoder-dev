@@ -203,6 +203,7 @@
   text-align: center;
   padding: 5px;
   border-radius: 10px;
+
   background-color: rgb(82, 78, 78);
   margin: 10px;
   font-size: clamp(0.4rem, 1vw, 2rem);
@@ -259,7 +260,9 @@
 
 .descriptionTitle {
   font-size: clamp(0.3rem, 2vw, 3rem);
+  font-weight: bold;
 }
 .descriptionText {
   font-size: clamp(0.3rem, 2vw, 1.5rem);
+  color: rgb(165, 164, 164);
 }
