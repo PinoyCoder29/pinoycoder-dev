@@ -24,8 +24,8 @@
 .technologyFrontEnd {
   border: 1px solid white;
   width: 100%;
-
   border-radius: 25px;
+  background-color: rgb(29, 28, 28);
 }
 .frontEndTitle {
   margin: 10px;
@@ -38,6 +38,7 @@
     rgb(43, 43, 43)
   );
   border-radius: 25px;
+  border: 1px solid grey;
 }
 .technologyTool {
   flex: 1;
@@ -56,9 +57,8 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   background-color: rgba(128, 128, 128, 0.2);
   border-radius: 25px;
-  padding: 15px;
-  margin: 10px;
-
+  padding: clamp(1px, 1vw, 15px);
+  margin: clamp(1px, 1vw, 10px);
   box-sizing: border-box;
 }
 .techItem svg {
@@ -80,6 +80,36 @@
 .technologyDatabase {
   flex: 1;
   border: 1px solid white;
+  border-radius: 10px;
+  background-color: rgb(29, 28, 28);
+}
+.databaseTitle {
+  text-align: center;
+  border-radius: 25px;
+  background: linear-gradient(
+    45deg,
+    rgb(43, 43, 43),
+    rgb(104, 100, 100),
+    rgb(43, 43, 43)
+  );
+  margin: 10px;
+  border: 1px solid grey;
+}
+.databaseItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(128, 128, 128, 0.2);
+  border-radius: 25px;
+  padding: clamp(1px, 1vw, 15px);
+  margin: clamp(1px, 1vw, 10px);
+  box-sizing: border-box;
+}
+.databaseItem svg {
+  width: 40px;
+  height: 30px;
 }
 .technologyBackend {
   flex: 3;

@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 
 import { RiNextjsFill } from "react-icons/ri";
-import { SiExpress, SiPostgresql } from "react-icons/si";
+import { SiExpress, SiPostgresql, SiMysql } from "react-icons/si";
 
 // 🔥 FULL STACK (optional general list)
 export const techStacks = [
@@ -19,7 +19,7 @@ export const techStacks = [
   { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
 ];
 
-// 🎯 FRONT END STACK (WITH ICONS)
+// FRONT END STACK (WITH ICONS)
 export const FrontEndStacks = [
   { name: "HTML", icon: FaHtml5, color: "#E34F26" },
   { name: "CSS", icon: FaCss3Alt, color: "#1572B6" },
@@ -27,4 +27,10 @@ export const FrontEndStacks = [
   { name: "React", icon: FaReact, color: "#61DBFB" },
   { name: "Bootstrap", icon: FaBootstrap, color: "#7952B3" },
   { name: "Next.js", icon: RiNextjsFill, color: "#ffffff" },
+];
+
+// Database
+export const Database = [
+  { name: "MySQL", icon: SiMysql, color: "#4479A1" },
+  { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
 ];
