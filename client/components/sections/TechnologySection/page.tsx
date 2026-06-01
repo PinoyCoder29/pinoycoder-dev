@@ -1,6 +1,6 @@
 import { div, style } from "framer-motion/client";
 import Styles from "./style.module.css";
-import { Database, FrontEndStacks } from "@/config/techStacks";
+import { Backend, Database, FrontEndStacks } from "@/config/techStacks";
 export default function Technologies() {
   return (
     <>
@@ -36,7 +36,7 @@ export default function Technologies() {
                   {Database.map((item) => {
                     const Icon = item.icon;
                     return (
-                      <div className={`col-12`} key={item.name}>
+                      <div className={`col-12 `} key={item.name}>
                         <div className={Styles.databaseItem}>
                           <Icon style={{ color: item.color }} />
                           <p className="">{item.name}</p>
@@ -47,7 +47,22 @@ export default function Technologies() {
                 </div>
               </div>
 
-              <div className={Styles.technologyBackend}></div>
+              <div className={Styles.technologyBackend}>
+                <p className={Styles.backendTitle}>Back-end</p>
+                <div className={`row ${Styles.backendRow}`}>
+                  {Backend.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <div className="col-md-3 col-6 " key={item.name}>
+                        <div className={Styles.backendItem}>
+                          <Icon style={{ color: item.color }} />
+                          <p>{item.name}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           </div>
           <div className={Styles.technologyTool}></div>
