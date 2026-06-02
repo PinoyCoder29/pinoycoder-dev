@@ -1,6 +1,7 @@
 import { div, style } from "framer-motion/client";
 import Styles from "./style.module.css";
-import { Backend, Database, FrontEndStacks } from "@/config/techStacks";
+import { Backend, Database, FrontEndStacks, Tools } from "@/config/techStacks";
+import { color } from "framer-motion";
 export default function Technologies() {
   return (
     <>
@@ -53,7 +54,7 @@ export default function Technologies() {
                   {Backend.map((item) => {
                     const Icon = item.icon;
                     return (
-                      <div className="col-md-3 col-6 " key={item.name}>
+                      <div className="col-md-6 col-lg-4 col-6 " key={item.name}>
                         <div className={Styles.backendItem}>
                           <Icon style={{ color: item.color }} />
                           <p>{item.name}</p>
@@ -65,7 +66,22 @@ export default function Technologies() {
               </div>
             </div>
           </div>
-          <div className={Styles.technologyTool}></div>
+          <div className={Styles.technologyTool}>
+            <p className={Styles.toolTitle}>Tools</p>
+            <div className={`row ${Styles.toolRow}`}>
+              {Tools.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div className="col-md-12 col-12" key={item.name}>
+                    <div className={Styles.toolItem}>
+                      <Icon style={{ color: item.color }} />
+                      <p>{item.name}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </section>
     </>

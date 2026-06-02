@@ -40,11 +40,7 @@
   border-radius: 25px;
   border: 1px solid grey;
 }
-.technologyTool {
-  flex: 1;
-  border: 1px solid white;
-  border-radius: 25px;
-}
+
 .techRow {
   gap: 10px;
   justify-content: center;
@@ -141,4 +137,54 @@
   padding: clamp(1px, 1vw, 15px);
   margin: clamp(1px, 1vw, 10px);
   box-sizing: border-box;
+}
+.backendItem svg {
+  width: clamp(10px, 3vw, 30px);
+  height: 25px;
+  transition: 0.3s ease;
+}
+.backendItem p {
+  font-size: clamp(0.3rem, 2vw, 0.8rem);
+}
+.technologyTool {
+  flex: 1;
+  border: 1px solid white;
+  width: 100%;
+  border-radius: 25px;
+  background-color: rgb(29, 28, 28);
+}
+
+.toolTitle {
+  text-align: center;
+  border-radius: 25px;
+  background: linear-gradient(
+    45deg,
+    rgb(43, 43, 43),
+    rgb(104, 100, 100),
+    rgb(43, 43, 43)
+  );
+  margin: 10px;
+  border: 1px solid grey;
+}
+
+.toolItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(128, 128, 128, 0.2);
+  border-radius: 25px;
+  padding: clamp(1px, 1vw, 15px);
+  margin: clamp(1px, 1vw, 10px);
+  box-sizing: border-box;
+}
+
+.toolItem svg {
+  width: clamp(10px, 3vw, 30px);
+  height: 25px;
+  transition: 0.3s ease;
+}
+.toolItem p {
+  font-size: clamp(0.4rem, 1vw, 1.5rem);
 }
