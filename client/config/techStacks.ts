@@ -10,9 +10,16 @@ import {
   FaGithub,
   FaGitAlt,
 } from "react-icons/fa";
-
+import {
+  SiVercel,
+  SiHuggingface,
+  SiCloudinary,
+  SiTensorflow,
+  SiPytorch,
+  SiMediapipe,
+  SiKdeneon,
+} from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
-
 import { SiExpress, SiPostgresql, SiMysql, SiFastapi } from "react-icons/si";
 
 //  FULL STACK
@@ -48,7 +55,24 @@ export const Backend = [
   { name: "FastAPI", icon: SiFastapi, color: "#009688" },
 ];
 
-// Tools
+//  DEPLOYMENT
+export const Deployment = [
+  { name: "Vercel", icon: SiVercel, color: "#ffffff" },
+  { name: "Hugging Face", icon: SiHuggingface, color: "#FFD21E" },
+  { name: "Neon", icon: SiKdeneon, color: "#00E599" },
+  { name: "Cloudinary", icon: SiCloudinary, color: "#3448C5" },
+];
+
+//  AI MODELS
+export const AIModels = [
+  { name: "TensorFlow", icon: SiTensorflow, color: "#FF6F00" },
+  { name: "PyTorch", icon: SiPytorch, color: "#EE4C2C" },
+  { name: "MediaPipe", icon: SiMediapipe, color: "#00BCD4" },
+  { name: "GRU", icon: FaPython, color: "#3776AB" },
+  { name: "MobileNetV2", icon: FaPython, color: "#3776AB" },
+];
+
+//  TOOLS
 export const Tools = [
   { name: "Git", icon: FaGitAlt, color: "#F05032" },
   { name: "GitHub", icon: FaGithub, color: "#FFFFFF" },

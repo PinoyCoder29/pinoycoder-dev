@@ -1,6 +1,7 @@
 .technologySection {
   margin-top: 10rem;
 }
+
 .technologyTitle {
   font-size: clamp(2rem, 2vw, 2rem);
   display: flex;
@@ -11,25 +12,28 @@
   font-weight: bold;
 }
 
+/* ── MAIN CONTAINER ── */
 .technologyContainer {
   display: flex;
   gap: 10px;
+  align-items: flex-start; /* fixes Tools stretching */
 }
 
 .technologyWrapper {
   display: flex;
   flex: 4;
   flex-direction: column;
+  gap: 10px;
 }
-.technologyFrontEnd {
-  border: 1px solid white;
-  width: 100%;
-  border-radius: 25px;
-  background-color: rgb(29, 28, 28);
-}
-.frontEndTitle {
+
+/* ── SHARED TITLE STYLE ── */
+.frontEndTitle,
+.databaseTitle,
+.backendTitle,
+.deploymentTitle,
+.aiTitle,
+.toolTitle {
   margin: 10px;
-  font-size: clamp(1rem, 2vw, 1.4 rem);
   text-align: center;
   background: linear-gradient(
     45deg,
@@ -39,12 +43,27 @@
   );
   border-radius: 25px;
   border: 1px solid grey;
+  font-size: clamp(0.7rem, 2vw, 1.1rem);
 }
 
+/* ── SHARED CARD STYLE ── */
+.technologyFrontEnd,
+.technologyDatabase,
+.technologyBackend,
+.technologyDeployment,
+.technologyAI,
+.technologyTool {
+  border: 1px solid white;
+  border-radius: 25px;
+  background-color: rgb(29, 28, 28);
+}
+
+/* ── FRONT-END ── */
 .techRow {
   gap: 10px;
   justify-content: center;
 }
+
 .techItem {
   display: flex;
   flex-direction: column;
@@ -57,40 +76,33 @@
   margin: clamp(1px, 1vw, 10px);
   box-sizing: border-box;
 }
+
 .techItem svg {
   width: clamp(10px, 3vw, 30px);
   height: 25px;
   transition: 0.3s ease;
 }
+
 .techItem p {
   font-size: clamp(0.3rem, 2vw, 1rem);
 }
 
+/* ── BOTTOM ROW (Database+Backend / Deployment+AI) ── */
 .bottomRow {
   display: flex;
   flex-direction: row;
   gap: 10px;
-  margin-top: 10px;
 }
 
+/* ── DATABASE ── */
 .technologyDatabase {
   flex: 1;
-  border: 1px solid white;
-  border-radius: 10px;
-  background-color: rgb(29, 28, 28);
 }
-.databaseTitle {
-  text-align: center;
-  border-radius: 25px;
-  background: linear-gradient(
-    45deg,
-    rgb(43, 43, 43),
-    rgb(104, 100, 100),
-    rgb(43, 43, 43)
-  );
-  margin: 10px;
-  border: 1px solid grey;
+
+.databaseRow {
+  justify-content: center;
 }
+
 .databaseItem {
   display: flex;
   flex-direction: column;
@@ -103,29 +115,25 @@
   margin: clamp(1px, 1vw, 10px);
   box-sizing: border-box;
 }
+
+.databaseItem p {
+  font-size: clamp(0.3rem, 2vw, 0.8rem);
+}
+
 .databaseItem svg {
   width: 40px;
   height: 30px;
 }
+
+/* ── BACKEND ── */
 .technologyBackend {
   flex: 3;
-  border: 1px solid white;
-  width: 100%;
-  border-radius: 25px;
-  background-color: rgb(29, 28, 28);
 }
-.backendTitle {
-  text-align: center;
-  border-radius: 25px;
-  background: linear-gradient(
-    45deg,
-    rgb(43, 43, 43),
-    rgb(104, 100, 100),
-    rgb(43, 43, 43)
-  );
-  margin: 10px;
-  border: 1px solid grey;
+
+.backendRow {
+  justify-content: center;
 }
+
 .backendItem {
   display: flex;
   flex-direction: column;
@@ -138,33 +146,89 @@
   margin: clamp(1px, 1vw, 10px);
   box-sizing: border-box;
 }
+
 .backendItem svg {
   width: clamp(10px, 3vw, 30px);
   height: 25px;
   transition: 0.3s ease;
 }
+
 .backendItem p {
   font-size: clamp(0.3rem, 2vw, 0.8rem);
 }
-.technologyTool {
+
+/* ── DEPLOYMENT ── */
+.technologyDeployment {
   flex: 1;
-  border: 1px solid white;
-  width: 100%;
-  border-radius: 25px;
-  background-color: rgb(29, 28, 28);
 }
 
-.toolTitle {
-  text-align: center;
+.deploymentRow {
+  justify-content: center;
+}
+
+.deploymentItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(128, 128, 128, 0.2);
   border-radius: 25px;
-  background: linear-gradient(
-    45deg,
-    rgb(43, 43, 43),
-    rgb(104, 100, 100),
-    rgb(43, 43, 43)
-  );
-  margin: 10px;
-  border: 1px solid grey;
+  padding: clamp(1px, 1vw, 15px);
+  margin: clamp(1px, 1vw, 10px);
+  box-sizing: border-box;
+}
+
+.deploymentItem svg {
+  width: clamp(10px, 3vw, 30px);
+  height: 25px;
+  transition: 0.3s ease;
+}
+
+.deploymentItem p {
+  font-size: clamp(0.3rem, 2vw, 0.8rem);
+}
+
+/* ── AI MODELS ── */
+.technologyAI {
+  flex: 3;
+}
+
+.aiRow {
+  justify-content: center;
+}
+
+.aiItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(128, 128, 128, 0.2);
+  border-radius: 25px;
+  padding: clamp(1px, 1vw, 15px);
+  margin: clamp(1px, 1vw, 10px);
+  box-sizing: border-box;
+}
+
+.aiItem svg {
+  width: clamp(10px, 3vw, 30px);
+  height: 25px;
+  transition: 0.3s ease;
+}
+
+.aiItem p {
+  font-size: clamp(0.3rem, 2vw, 0.8rem);
+}
+
+/* ── TOOLS (right column) ── */
+.technologyTool {
+  flex: 1;
+  align-self: flex-start; /* hindi na mag-stretch */
+}
+
+.toolRow {
+  justify-content: center;
 }
 
 .toolItem {
@@ -185,6 +249,7 @@
   height: 25px;
   transition: 0.3s ease;
 }
+
 .toolItem p {
   font-size: clamp(0.4rem, 1vw, 1.5rem);
 }

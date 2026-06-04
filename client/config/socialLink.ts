@@ -20,13 +20,19 @@ export const socialLinks: socialLink[] = [
   {
     name: "GitHub",
     icon: "bi-github",
-    path: "https://github.com/your-username",
+    path: "https://github.com/PinoyCoder29",
     color: "#ffffff",
   },
   {
     name: "Instagram",
     icon: "bi-instagram",
-    path: "https://instagram.com/your-username",
+    path: "https://www.instagram.com/pinoycoder29/",
     color: "#af811f",
+  },
+  {
+    name: "Tiktok",
+    icon: "bi-tiktok",
+    path: "https://www.tiktok.com/@pinoycoder29",
+    color: "#25F4EE",
   },
 ];

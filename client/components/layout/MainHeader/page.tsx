@@ -18,7 +18,7 @@ export default function MainHeader() {
             <div key={item.name}>
               <a href={item.path}>
                 <i
-                  className={`bi ${item.icon}`}
+                  className={`bi ${item.icon} ${styles.itemIcon}`}
                   style={{ color: item.color }}
                 ></i>
               </a>
