@@ -9,7 +9,9 @@ export default function MainHeader() {
         {/* LEFT SIDE */}
         <div className="d-flex align-items-center gap-2">
           <Image alt="logo" src="/pinoycoder.png" width={60} height={40} />
-          <h1 className="navbar-brand text-light mb-0">PinoyCoder</h1>
+          <h1 className={`navbar-brand text-light mb-0 ${styles.navbarBrand}`}>
+            PinoyCoder
+          </h1>
         </div>
 
         {/* RIGHT SIDE */}
