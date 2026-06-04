@@ -16,7 +16,7 @@
 .technologyContainer {
   display: flex;
   gap: 10px;
-  align-items: flex-start; /* fixes Tools stretching */
+  align-items: flex-start;
 }
 
 .technologyWrapper {
@@ -224,7 +224,7 @@
 /* ── TOOLS (right column) ── */
 .technologyTool {
   flex: 1;
-  align-self: flex-start; /* hindi na mag-stretch */
+  align-self: flex-start;
 }
 
 .toolRow {
@@ -252,4 +252,10 @@
 
 .toolItem p {
   font-size: clamp(0.4rem, 1vw, 1.5rem);
+}
+
+@media (max-width: 786px) {
+  .technologyTool {
+    flex: 1.4;
+  }
 }
