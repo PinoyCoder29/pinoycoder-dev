@@ -1,0 +1,51 @@
+.projectSection {
+  margin-top: 7rem;
+}
+.sectionTitle {
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid white;
+  border-radius: 30px;
+  background: linear-gradient(
+    60deg,
+    rgb(0, 0, 0),
+    rgb(29, 32, 46),
+    rgb(0, 0, 0)
+  );
+  padding: 2rem;
+}
+
+.sectionTitle p {
+  font-size: clamp(2.5rem, 6vw, 10rem);
+  text-shadow: 1px -7px 5px white;
+  background: linear-gradient(45deg, #b4afaf, #292828, #4c8391);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: rgb(100, 97, 97);
+}
+
+.projectContainer {
+  margin-top: 4rem;
+  border-radius: 25px;
+  border: 6px solid rgb(90, 86, 86);
+  padding: clamp(2rem, 7vw, 10rem);
+  overflow: hidden;
+  background: linear-gradient(
+    45deg,
+    rgb(0, 0, 0),
+    rgb(83, 81, 81),
+    rgb(0, 0, 0)
+  );
+}
+
+.projectTitle {
+  text-align: center;
+  padding: 10px;
+  font-size: clamp(2rem, 2vw, 3rem);
+}
+
+.projectImage {
+  width: 100%;
+  height: auto;
+  border-radius: 25px;
+}
