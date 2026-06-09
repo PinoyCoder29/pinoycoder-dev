@@ -33,7 +33,7 @@
   background: linear-gradient(
     45deg,
     rgb(0, 0, 0),
-    rgb(83, 81, 81),
+    rgb(61, 56, 56),
     rgb(0, 0, 0)
   );
 }
@@ -42,6 +42,7 @@
   text-align: center;
   padding: 10px;
   font-size: clamp(1.4rem, 2vw, 2.3rem);
+  font-weight: 800;
 }
 .projectLogo {
   align-items: center;
@@ -54,7 +55,7 @@
 
 .imageWrapper {
   background-color: rgb(53, 50, 50);
-  border: 5px solid rgb(56, 48, 48);
+  border: 5px solid rgb(22, 17, 17);
   padding-top: 10px;
   border-radius: 25px;
   overflow: hidden;
@@ -62,6 +63,7 @@
 .projectLink {
   display: flex;
   justify-content: start;
+  align-items: center;
   margin: 10px;
   gap: 10px;
 }
@@ -85,9 +87,9 @@
   color: rgb(201, 197, 197);
 }
 .projectLink a:hover {
-  background-color: rgb(180, 61, 61);
+  background-color: rgb(24, 21, 21);
   padding: 5px;
-  border-radius: 25px;
+  border-radius: 10px;
 }
 .projectImage {
   width: 100%;

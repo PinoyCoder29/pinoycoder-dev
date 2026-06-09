@@ -12,7 +12,7 @@ export default function MainHeader() {
           <h1 className={`navbar-brand text-light mb-0 ${styles.navbarBrand}`}>
             PinoyCoder
           </h1>
-        </div>
+        </div> 
 
         {/* RIGHT SIDE */}
         <div className="d-flex gap-3">

@@ -197,7 +197,7 @@
   border: 1px solid white;
   border-radius: 20px;
 
-  overflow: hidden; /* ← dagdag */
+  overflow: hidden; 
   min-width: 0;
 }
 .achievementsTitle {

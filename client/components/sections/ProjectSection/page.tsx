@@ -7,11 +7,15 @@ export default function ProjectSection() {
         <div className={styles.sectionTitle}>
           <p>PROJECTS</p>
         </div>
-        {Projects.map((item) => {
+        {Projects.map((item, i) => {
           return (
-            <div className={styles.projectContainer} key={item.logo}>
+            <div className={styles.projectContainer} key={i}>
               <div className={styles.projectLogo}>
-                <img src={item.logo} alt={item.title} />
+                {item.logo ? (
+                  <img src={item.logo} alt={item.title} />
+                ) : (
+                  <span>{item.title}</span>
+                )}
               </div>
 
               <p className={styles.projectTitle}>{item.title}</p>
@@ -40,7 +44,10 @@ export default function ProjectSection() {
                     <Icon
                       className={styles.projectTechstack}
                       key={i}
-                      style={{ color: tech.color }}
+                      style={{
+                        color: tech.color,
+                        backgroundColor: tech.bgColor,
+                      }}
                     />
                   );
                 })}
