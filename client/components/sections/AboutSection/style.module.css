@@ -2,7 +2,6 @@
   display: flex;
   gap: 20px;
   justify-content: space-between;
-  margin: 1.3rem;
 }
 .aboutText {
   text-align: center;
@@ -74,7 +73,7 @@
   margin-bottom: 50px;
 }
 .aboutSkills {
-  flex: 1.2;
+  flex: 1.3;
   border: 1px solid rgb(71, 71, 71);
   height: auto;
   overflow: hidden;
@@ -164,25 +163,20 @@
   }
 }
 
-@media (max-width: 768px) {
-  .section {
-    margin: 0px;
-  }
+@media (max-width: 767.9px) {
   .aboutContainer {
+    flex-direction: row;
     margin: 0;
-    gap: 5px;
   }
 
   .aboutContent {
-    flex: 2.5;
+    flex: 2;
+    min-width: 0;
   }
 
   .aboutSkills {
-    flex: 2;
-  }
-
-  .socialWrapper {
-    gap: 1rem;
+    flex: 1;
+    min-width: 0;
   }
 }
 
@@ -197,7 +191,7 @@
   border: 1px solid white;
   border-radius: 20px;
 
-  overflow: hidden; 
+  overflow: hidden;
   min-width: 0;
 }
 .achievementsTitle {

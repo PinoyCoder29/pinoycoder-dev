@@ -35,6 +35,9 @@
   border-radius: 14px;
 }
 
+.logo {
+  border-radius: 25px;
+}
 .mobilebar {
   background: linear-gradient(
     45deg,

@@ -18,6 +18,7 @@ export default function Siderbar() {
               src="/pinoycoder.png"
               width={85}
               height={60}
+              className={styles.logo}
             ></Image>
           </div>
           {navLinks.map((item) => {

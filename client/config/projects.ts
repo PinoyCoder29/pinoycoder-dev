@@ -1,6 +1,12 @@
 import { FaBootstrap, FaCss3Alt, FaNodeJs, FaReact } from "react-icons/fa";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { SiExpress, SiFastapi, SiMysql, SiPython } from "react-icons/si";
+import {
+  SiExpress,
+  SiFastapi,
+  SiMysql,
+  SiPython,
+  SiTypescript,
+} from "react-icons/si";
 
 export const Projects = [
   {
@@ -11,7 +17,8 @@ export const Projects = [
     path: "https://esignmo.vercel.app/main/asl",
     bgColor: "linear-gradient(135deg, #0f172a, #1e293b)",
     description:
-      "A web-based system that enables communication between non-verbal/deaf individuals and verbal users through sign-to-text and speech-to-sign translation. It also includes learning and testing modules for improving sign language skills.",
+      "Capstone project: A web-based sign language communication and learning system that enables interaction between non-verbal/deaf individuals and verbal users through sign-to-text and speech-to-sign translation. The system also includes interactive learning and testing modules designed to improve sign language proficiency through guided lessons and assessments.",
+
     techStack: [
       {
         icon: RiNextjsFill,
@@ -19,6 +26,13 @@ export const Projects = [
         color: "#ffffff",
         bgColor: "#000000",
       },
+      {
+        icon: SiTypescript,
+        name: "TypeScript",
+        color: "#ffffff",
+        bgColor: "#3178C6",
+      },
+
       {
         icon: FaBootstrap,
         name: "Bootstrap",
@@ -80,6 +94,42 @@ export const Projects = [
         name: "Express.js",
         color: "#ffffff",
         bgColor: "#000000",
+      },
+      {
+        icon: SiMysql,
+        name: "MySQL",
+        color: "#ffffff",
+        bgColor: "#4479A1",
+      },
+    ],
+  },
+  {
+    logo: "",
+    title: "Pt_Finder",
+    image: "/project/projectImage/pt-finder.png",
+    subTitle: "Pt_finder: Empower Students To Find Jobs In Quezon",
+    path: "/",
+    bgColor: "linear-gradient(135deg, #111827, #0f766e)",
+    description:
+      "ptFINDER is a platform designed to connect students with flexible part-time opportunities in Quezon Province — helping them gain experience, earn income, and support their local communities.",
+    techStack: [
+      {
+        icon: RiNextjsFill,
+        name: "Next.js",
+        color: "#ffffff",
+        bgColor: "#000000",
+      },
+      {
+        icon: SiTypescript,
+        name: "TypeScript",
+        color: "#ffffff",
+        bgColor: "#3178C6",
+      },
+      {
+        icon: FaCss3Alt,
+        name: "CSS3",
+        color: "#ffffff",
+        bgColor: "#2965F1",
       },
       {
         icon: SiMysql,
