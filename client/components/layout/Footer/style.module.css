@@ -1,0 +1,74 @@
+.footer {
+  margin: 4rem 2rem 0 2rem;
+}
+.container {
+  width: 100%;
+  background: linear-gradient(
+    45deg,
+    rgb(0, 0, 0),
+    rgb(75, 72, 72),
+    rgb(0, 0, 0)
+  );
+  border: 5px solid rgb(100, 95, 95);
+  height: auto;
+  padding: clamp(0.3rem, 2vw, 3rem);
+  border-radius: 25px;
+}
+.leftContent {
+}
+.aboutContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.motivation {
+  margin-top: 10px;
+  font-size: clamp(0.7rem, 1.2vw, 0.9rem);
+  opacity: 0.8;
+}
+.imageWrapper {
+  width: 100%;
+  max-width: 100px;
+}
+.imageWrapper img {
+  max-width: 100px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+.leftContent p {
+  font-size: clamp(0.5rem, 1.2vw, 3rem);
+  text-align: center;
+}
+.centerContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.centerContent a {
+  font-size: clamp(0.5rem, 1.2vw, 2rem);
+  text-decoration: none;
+}
+.rightContent {
+  display: flex;
+  flex-direction: column;
+}
+.rightContent a {
+  display: flex;
+  gap: 10px;
+  font-size: clamp(0.7rem, 1.2vw, 2rem);
+  text-decoration: none;
+  color: rgb(238, 233, 233);
+}
+
+@media (max-width: 767.9px) {
+  .footer {
+    margin-bottom: 4rem;
+  }
+  .imageWrapper {
+    max-width: 70px;
+  }
+}

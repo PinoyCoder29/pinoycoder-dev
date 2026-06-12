@@ -20,7 +20,7 @@ export default function HomeSection() {
               and backend technologies, focusing on performance, usability, and
               clean code.
             </p>
-            <a href="#Project">
+            <a href="#projects">
               View Projects
               <i className="bi bi-arrow-down"></i>
             </a>

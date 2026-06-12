@@ -5,6 +5,7 @@ import BootstrapClient from "./bootstrapClient";
 import "./globals.css";
 import Sidebar from "@/components/layout/Sidebar/page";
 import MainHeader from "@/components/layout/MainHeader/page";
+import Footer from "@/components/layout/Footer/page";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -28,6 +29,9 @@ export default function RootLayout({
           <MainHeader />
         </div>
         <main className="px-4 py-5"> {children}</main>
+        <div>
+          <Footer />
+        </div>
       </body>
     </html>
   );
