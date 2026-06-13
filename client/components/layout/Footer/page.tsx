@@ -17,7 +17,7 @@ export default function Footer() {
 
                 <p className={styles.motivation}>
                   “The best way to learn programming is by building, not
-                  watching.
+                  watching. 
                 </p>
               </div>
             </div>
