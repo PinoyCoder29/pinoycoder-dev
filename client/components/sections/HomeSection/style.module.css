@@ -1,12 +1,48 @@
 .homeSection {
-  border: 1px solid rgb(124, 119, 119);
-  padding: 16px;
-  border-radius: 2rem;
-  box-shadow: 1px 1px 2px 3px rgb(109, 105, 105);
-  min-height: fit-content;
-  margin: 5rem 1rem 8.2rem 0.3rem;
+  position: relative;
+  padding: 10px;
+  border-radius: 30px;
+  overflow: hidden;
+  margin: 5rem 0 3rem 0;
 }
 
+.homeSection::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background: conic-gradient(
+    transparent,
+    #848688,
+    #727174,
+    #717374,
+    transparent
+  );
+  animation: rotate 6s linear infinite;
+  z-index: 0;
+}
+
+.homeSection::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  background: #111;
+  border-radius: 28px;
+  z-index: 1;
+}
+
+.homeSection > * {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .homeContainer {
   display: flex;
   justify-content: space-between;
@@ -37,7 +73,7 @@
   max-width: 400px;
   font-size: clamp(0.2rem, 2vw, 0.8rem);
 }
- 
+
 .homeTitle a {
   width: fit-content;
   border-radius: 10px;

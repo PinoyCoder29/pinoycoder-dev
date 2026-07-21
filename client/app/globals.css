@@ -10,8 +10,8 @@ html {
 }
 
 body {
-  background-color: black;
-  color: white;
+  background: rgb(0, 0, 0) !important;
+  color: white !important;
   font-family: "DM Sans", sans-serif;
 }
 section {

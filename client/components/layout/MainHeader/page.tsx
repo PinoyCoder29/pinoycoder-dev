@@ -12,7 +12,21 @@ export default function MainHeader() {
           <h1 className={`navbar-brand text-light mb-0 ${styles.navbarBrand}`}>
             PinoyCoder
           </h1>
-        </div> 
+        </div>
+        <div className="d-flex mx-auto">
+          <ul className={`navbar-nav ${styles.center}`}>
+            <li className={`nav-item `}>
+              <a href="/" className="nav-link text-light">
+                Home
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="/projects" className="nav-link text-light">
+                Projects
+              </a>
+            </li>
+          </ul>
+        </div>
 
         {/* RIGHT SIDE */}
         <div className="d-flex gap-3">

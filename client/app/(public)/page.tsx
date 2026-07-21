@@ -1,6 +1,6 @@
 import AboutSection from "@/components/sections/AboutSection/page";
 import HomeSection from "@/components/sections/HomeSection/page";
-import ProjectSection from "@/components/sections/ProjectSection/page";
+// import ProjectSection from "@/components/sections/ProjectSection/page";
 import Technologies from "@/components/sections/TechnologySection/page";
 
 export default function Home() {
@@ -9,7 +9,6 @@ export default function Home() {
       <HomeSection />
       <AboutSection />
       <Technologies />
-      <ProjectSection />
     </>
   );
 }
