@@ -122,7 +122,7 @@ export default function AboutSection() {
           </section>
         </ScrollReveal>
 
-        <section id="achievements">
+        <section id="about">
           <div className={styles.achievementsContainer}>
             <div className={styles.achievementsContent}>
               <p className={styles.achievementsTitle}>Achievements</p>

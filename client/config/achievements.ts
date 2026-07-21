@@ -10,9 +10,9 @@ export const achievements = [
   },
   {
     type: "image",
-    src: "/portfolio.png",
+    src: "/",
     alt: "portfolio",
     title: "Portfolio",
-    description: "My portfolio website built with Next.js.",
+    description: "Coming soon",
   },
 ];

@@ -58,7 +58,7 @@
 }
 .rightContent a {
   display: flex;
-  gap: 10px;
+    gap: 10px;
   font-size: clamp(0.5rem, 1.2vw, 2rem);
   text-decoration: none;
   color: rgb(238, 233, 233);

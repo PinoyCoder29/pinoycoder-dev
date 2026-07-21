@@ -37,7 +37,7 @@
   max-width: 400px;
   font-size: clamp(0.2rem, 2vw, 0.8rem);
 }
-
+ 
 .homeTitle a {
   width: fit-content;
   border-radius: 10px;
