@@ -1,4 +1,4 @@
-import { sidebarLinks } from "@/config/sidebarLinks";
+import { sidebarLinks } from "@/config/navigation/sidebarLinks";
 import styles from "./style.module.css";
 export default function Footer() {
   return (

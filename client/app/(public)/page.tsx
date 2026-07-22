@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import { sidebarLinks } from "@/config/sidebarLinks";
+import { sidebarLinks } from "@/config/navigation/sidebarLinks";
 
 import AboutSection from "@/components/sections/AboutSection/page";
 import HomeSection from "@/components/sections/HomeSection/page";

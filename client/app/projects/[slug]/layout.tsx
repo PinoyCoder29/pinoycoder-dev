@@ -1,11 +1,11 @@
-export default function ProjectLayout({
+export default function ProjectDetailLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <div>
+    <>
       <main>{children}</main>
-    </div>
+    </>
   );
 }

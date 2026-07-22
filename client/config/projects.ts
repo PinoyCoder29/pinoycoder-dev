@@ -11,6 +11,7 @@ import {
 export const Projects = [
   {
     logo: "/project/logo/esignmo.png",
+    slug: "esignmo",
     title: "eSign Mo",
     image: "/project/projectImage/esignmo.png",
     subTitle: "Sign Language Translation System",
@@ -62,6 +63,7 @@ export const Projects = [
 
   {
     logo: "",
+    slug: "lomilindol",
     title: "LOMILINDOL",
     image: "/project/projectImage/lomilindol.png",
     subTitle:
@@ -105,6 +107,7 @@ export const Projects = [
   },
   {
     logo: "",
+    slug: "ptfinder",
     title: "Pt_Finder",
     image: "/project/projectImage/pt-finder.png",
     subTitle: "Pt_finder: Empower Students To Find Jobs In Quezon",

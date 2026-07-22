@@ -1,13 +1,15 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import styles from "./style.module.css";
-import { sidebarlink } from "@/config/sidebarLinks";
+import { sidebarlink } from "@/config/navigation/sidebarLinks";
 
 type SidebarProps = {
   links: sidebarlink[];
-  activeLink: string;
+  activeLink?: string;
   onLinkClick?: (path: string) => void;
 };
 
@@ -16,6 +18,31 @@ export default function Sidebar({
   activeLink,
   onLinkClick,
 }: SidebarProps) {
+  const pathname = usePathname();
+  const linkRefs = useRef<Record<string, HTMLLIElement | null>>({});
+
+  const isActive = (path: string) => {
+    if (path.startsWith("#")) {
+      return activeLink === path;
+    }
+    // kung may activeLink na nagbabago habang nag-sscroll (e.g. sa /projects page)
+    if (activeLink) {
+      return activeLink === path;
+    }
+    return pathname === path;
+  };
+
+  useEffect(() => {
+    if (!activeLink) return;
+    const activeEl = linkRefs.current[activeLink];
+    if (activeEl) {
+      activeEl.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest", // "center" kung gusto mong laging nasa gitna
+      });
+    }
+  }, [activeLink]);
+
   return (
     <>
       {/* Desktop */}
@@ -32,12 +59,18 @@ export default function Sidebar({
 
         <ul className={`nav flex-column gap-1 ${styles.navItem}`}>
           {links.map((item) => (
-            <li key={item.path} className="nav-item">
+            <li
+              key={item.path}
+              ref={(el) => {
+                linkRefs.current[item.path] = el;
+              }}
+              className="nav-item"
+            >
               <Link
                 href={item.path}
                 onClick={() => onLinkClick?.(item.path)}
                 className={`d-flex gap-2 nav-link ${
-                  activeLink === item.path ? styles.active : styles.navLink
+                  isActive(item.path) ? styles.active : styles.navLink
                 }`}
               >
                 <i className={`bi ${item.icon}`}></i>
@@ -58,10 +91,8 @@ export default function Sidebar({
               <Link
                 href={item.path}
                 onClick={() => onLinkClick?.(item.path)}
-                className={`nav-link text-light ${
-                  activeLink === item.path
-                    ? styles.mobileActive
-                    : styles.mobileLink
+                className={`nav-link ${
+                  isActive(item.path) ? styles.mobileActive : styles.mobileLink
                 }`}
               >
                 <i className={`bi ${item.icon}`}></i>

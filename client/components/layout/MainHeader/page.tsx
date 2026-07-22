@@ -2,8 +2,8 @@
 import Image from "next/image";
 import styles from "./style.module.css";
 import { socialLinks } from "@/config/socialLink";
-import { navLinks } from "@/config/navLink";
 import { usePathname } from "next/navigation";
+import { navLinks } from "@/config/navigation/navLink";
 
 export default function MainHeader() {
   const pathName = usePathname();
