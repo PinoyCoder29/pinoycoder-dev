@@ -91,7 +91,7 @@ export default function Sidebar({
               <Link
                 href={item.path}
                 onClick={() => onLinkClick?.(item.path)}
-                className={`nav-link ${
+                className={`nav-link text-light ${
                   isActive(item.path) ? styles.mobileActive : styles.mobileLink
                 }`}
               >
