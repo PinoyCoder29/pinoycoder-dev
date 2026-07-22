@@ -1,4 +1,4 @@
-import { navLinks } from "@/config/navLinks";
+import { sidebarLinks } from "@/config/sidebarLinks";
 import styles from "./style.module.css";
 export default function Footer() {
   return (
@@ -17,7 +17,7 @@ export default function Footer() {
 
                 <p className={styles.motivation}>
                   “The best way to learn programming is by building, not
-                  watching. 
+                  watching.
                 </p>
               </div>
             </div>
@@ -35,7 +35,7 @@ export default function Footer() {
             <div className="col-md-4 col-4">
               <p>Navigate</p>
               <div className={styles.rightContent}>
-                {navLinks.map((item, i) => {
+                {sidebarLinks.map((item, i) => {
                   return (
                     <a href="" key={i}>
                       <i className={`bi ${item.icon} text-light `}></i>

@@ -1,9 +1,9 @@
-export type navlink = {
+export type sidebarlink = {
   name: string;
   path: string;
   icon: string;
 };
-export const navLinks: navlink[] = [
+export const sidebarLinks: sidebarlink[] = [
   {
     name: "Home",
     path: "#home",
@@ -19,11 +19,11 @@ export const navLinks: navlink[] = [
     path: "#technologies",
     icon: "bi-gear",
   },
-  {
-    name: "Projects",
-    path: "#projects",
-    icon: "bi-kanban",
-  },
+  // {
+  //   name: "Projects",
+  //   path: "#projects",
+  //   icon: "bi-kanban",
+  // },
   {
     name: "Contact",
     path: "#contact",

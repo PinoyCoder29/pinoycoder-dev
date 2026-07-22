@@ -1,11 +1,15 @@
+import MainHeader from "@/components/layout/MainHeader/page";
+
 export default function ProjectLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <body>
+    <div>
+      {" "}
+      <MainHeader />
       <main>{children}</main>
-    </body>
+    </div>
   );
 }

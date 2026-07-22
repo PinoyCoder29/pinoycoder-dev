@@ -20,7 +20,9 @@
     margin-bottom: 2.5rem;
   }
 }
-
+.navLink {
+  color: rgb(160, 155, 155);
+}
 .navLink:hover {
   background-color: rgb(80, 75, 75);
   color: white;

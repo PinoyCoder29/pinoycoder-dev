@@ -1,8 +1,12 @@
+"use client";
 import Image from "next/image";
 import styles from "./style.module.css";
 import { socialLinks } from "@/config/socialLink";
+import { navLinks } from "@/config/navLink";
+import { usePathname } from "next/navigation";
 
 export default function MainHeader() {
+  const pathName = usePathname();
   return (
     <nav className={`navbar navbar-expand-md fixed-top ${styles.nav}`}>
       <div className="container-fluid d-flex justify-content-between align-items-center">
@@ -13,18 +17,22 @@ export default function MainHeader() {
             PinoyCoder
           </h1>
         </div>
+
+        {/* center */}
         <div className="d-flex mx-auto">
           <ul className={`navbar-nav ${styles.center}`}>
-            <li className={`nav-item `}>
-              <a href="/" className="nav-link text-light">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="/projects" className="nav-link text-light">
-                Projects
-              </a>
-            </li>
+            {navLinks.map((item) => {
+              return (
+                <li className={`nav-item `} key={item.path}>
+                  <a
+                    href={item.path}
+                    className={`nav-link   ${pathName === item.path ? styles.active : "text-secondary"}`}
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </div>
 
