@@ -56,3 +56,34 @@
   text-decoration-thickness: 4px;
   color: white;
 }
+
+.connectBtn {
+  background: #111;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 6px 14px;
+  font-size: clamp(1vw, 2rem, 0.8rem);
+}
+
+.connectBtn:hover,
+.connectBtn:focus {
+  background: #1a1a1a;
+  color: white;
+}
+
+.dropdownMenu {
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 6px;
+}
+
+.dropdownMenu :global(.dropdown-item) {
+  color: white;
+  border-radius: 8px;
+}
+
+.dropdownMenu :global(.dropdown-item:hover) {
+  background: #222;
+}

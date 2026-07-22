@@ -95,7 +95,7 @@ export default function Sidebar({
                   isActive(item.path) ? styles.mobileActive : styles.mobileLink
                 }`}
               >
-                <i className={`bi ${item.icon}`}></i>
+                <i className={`bi  ${item.icon}`}></i>
               </Link>
             </li>
           ))}
