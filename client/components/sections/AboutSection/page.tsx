@@ -82,9 +82,23 @@ export default function AboutSection() {
                 <div className={styles.topBox}></div>
                 <div className={styles.bottomBox}>
                   <h1 className={styles.aboutName}>Jay-Vee S. Bico</h1>
-                  <p>Pinoycoder</p>
-                  <p>Stay consistent, stay improving...</p>
-                  <div className={styles.socialScroll}>
+                  <p className="text-light">
+                    Junior Web Developer | Next.js | React | TypeScript |
+                    Express.js
+                  </p>
+                  <p>
+                    Sariaya, Calabarzon, Philippines{" "}
+                    <a href="">· Contact info</a>
+                  </p>
+
+                  <div className={`${styles.details}`}>
+                    <p>Open To Work</p>
+                    <p>
+                      Open to work Southeast Asia | Hybrid · Remote · On-site
+                      Show details
+                    </p>
+                  </div>
+                  {/* <div className={styles.socialScroll}>
                     <div className={styles.socialWrapper}>
                       {socialLinks.map((item) => (
                         <div className={styles.socialItem} key={item.name}>
@@ -96,7 +110,7 @@ export default function AboutSection() {
                         </div>
                       ))}
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 

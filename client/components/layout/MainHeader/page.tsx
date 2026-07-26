@@ -62,7 +62,7 @@ export default function MainHeader() {
             </div>
 
             {/* Mobile */}
-            <div className="dropdown d-md-none">
+            {/* <div className="dropdown d-md-none">
               <button
                 className={`btn ${styles.connectBtn}`}
                 type="button"
@@ -93,7 +93,7 @@ export default function MainHeader() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
