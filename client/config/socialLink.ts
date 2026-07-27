@@ -35,4 +35,10 @@ export const socialLinks: socialLink[] = [
     path: "https://www.tiktok.com/@pinoycoder29",
     color: "#25F4EE",
   },
+  {
+    name: "Linkedin",
+    icon: "bi-linkedin",
+    path: "https://www.linkedin.com/in/jay-vee-bico-22533734b/",
+    color: "#257ff4",
+  },
 ];

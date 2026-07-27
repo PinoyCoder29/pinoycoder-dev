@@ -8,6 +8,7 @@ import AboutSection from "@/components/sections/AboutSection/page";
 import HomeSection from "@/components/sections/HomeSection/page";
 import Technologies from "@/components/sections/TechnologySection/page";
 import Sidebar from "@/components/layout/Sidebar/Sidebar";
+import ContactSection from "@/components/sections/ContactSection/page";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("#home");
@@ -44,6 +45,7 @@ export default function Home() {
       <HomeSection />
       <AboutSection />
       <Technologies />
+      <ContactSection />
     </>
   );
 }

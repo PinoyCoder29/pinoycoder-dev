@@ -1,5 +1,5 @@
 import MainHeader from "@/components/layout/MainHeader/page";
-import Footer from "@/components/layout/Footer/page";
+// import Footer from "@/components/layout/Footer/page";
 import BootstrapClient from "../bootstrapClient";
 
 export default function PublicLayout({
@@ -14,8 +14,6 @@ export default function PublicLayout({
       <MainHeader />
 
       <main className="px-4 py-5">{children}</main>
-
-      <Footer />
     </>
   );
 }

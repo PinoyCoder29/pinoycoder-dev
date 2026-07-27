@@ -54,11 +54,17 @@
   );
 }
 .bottomBox p {
-  margin: 0;
+  margin-right: 4px;
 }
 
 .aboutName {
   font-size: clamp(0.4rem, 2vw, 2rem);
+}
+.aboutName span {
+  background-color: rgb(59, 218, 28);
+  font-size: clamp(0.4rem, 1.3vw, 1.7rem);
+  padding: 5px 8px;
+  border-radius: 25px;
 }
 .bottomBox p {
   font-size: clamp(0.4rem, 2vw, 1rem);
