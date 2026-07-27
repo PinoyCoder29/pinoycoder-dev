@@ -45,20 +45,18 @@ export default function MainHeader() {
           {/* RIGHT */}
           <div className="col-4 d-flex justify-content-end">
             {/* Desktop */}
-            <div className="d-none d-md-flex gap-3">
-              {socialLinks.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.path}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i
-                    className={`bi ${item.icon} ${styles.itemIcon}`}
-                    style={{ color: item.color }}
-                  ></i>
-                </a>
-              ))}
+            <div className={`d-none d-md-flex gap-3 ${styles.social}`}>
+              <a href="https://github.com/PinoyCoder29" className="">
+                <i className="bi bi-arrow-up-right"></i> Github
+              </a>
+              <a href="https://www.linkedin.com/in/jay-vee-bico-22533734b/">
+                {" "}
+                <i className="bi bi-arrow-up-right"></i> LinkedIn
+              </a>
+              <a href="/resume/Jay-Vee_Bico_Resume.pdf">
+                {" "}
+                <i className="bi bi-arrow-up-right"></i> Resume
+              </a>
             </div>
 
             {/* Mobile */}
@@ -75,23 +73,9 @@ export default function MainHeader() {
               <ul
                 className={`dropdown-menu dropdown-menu-end ${styles.dropdownMenu}`}
               >
-                {socialLinks.map((item) => (
-                  <li key={item.name}>
-                    <a
-                      href={item.path}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="dropdown-item d-flex align-items-center gap-2"
-                    >
-                      <i
-                        className={`bi ${item.icon}`}
-                        style={{ color: item.color }}
-                      ></i>
-
-                      {item.name}
-                    </a>
-                  </li>
-                ))}
+                <a href="">Github</a>
+                <a href="">LinkedIn</a>
+                <a href="">Resume</a>
               </ul>
             </div> */}
           </div>

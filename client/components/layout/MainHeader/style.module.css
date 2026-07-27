@@ -91,3 +91,10 @@
 .dropdownMenu :global(.dropdown-item:hover) {
   background: #222;
 }
+.social a {
+  text-decoration: none;
+  color: rgb(184, 174, 174);
+  border: 1px solid grey;
+  padding: 5px 10px;
+  border-radius: 25px;
+}

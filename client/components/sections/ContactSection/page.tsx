@@ -3,7 +3,7 @@ import { socialLinks } from "@/config/socialLink";
 export default function ContactSection() {
   return (
     <>
-      <footer className={styles.contact}>
+      <section className={styles.contact} id="contact">
         <div className={styles.container}>
           <div className="row">
             <div className="col-md-4 col-4">
@@ -50,7 +50,7 @@ export default function ContactSection() {
             </div>
           </div>
         </div>
-      </footer>
+      </section>
     </>
   );
 }

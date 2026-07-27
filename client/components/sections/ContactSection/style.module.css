@@ -14,8 +14,7 @@
   padding: clamp(0.3rem, 2vw, 3rem);
   border-radius: 25px;
 }
-.leftContent {
-}
+
 .aboutContent {
   display: flex;
   flex-direction: row;
