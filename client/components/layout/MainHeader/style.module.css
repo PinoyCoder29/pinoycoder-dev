@@ -1,7 +1,7 @@
 .center {
   position: relative;
   border-radius: 20px;
-  padding: 8px;
+  padding: 8px 22px;
   overflow: hidden;
   flex-direction: row;
   display: flex;
@@ -66,7 +66,7 @@
   border: 1px solid #333;
   border-radius: 12px;
   padding: 6px 14px;
-  font-size: clamp(1vw, 2 rem, 0.8rem);
+  font-size: clamp(1vw, 2rem, 0.8rem);
 }
 
 .connectBtn:hover,
@@ -91,10 +91,94 @@
 .dropdownMenu :global(.dropdown-item:hover) {
   background: #222;
 }
+
 .social a {
   text-decoration: none;
   color: rgb(184, 174, 174);
   border: 1px solid grey;
   padding: 5px 10px;
   border-radius: 25px;
+}
+
+/* =========================================
+   MOBILE RESPONSIVE FIX
+   Fixes "Projects" (and other nav items) being
+   clipped/hidden on mobile due to overflow:hidden
+   + oversized padding/gap/font relative to
+   the col-4 container width.
+   ========================================= */
+
+@media (max-width: 767px) {
+  .center {
+    /* Center nav now shares the row with the logo (col-6 each),
+       positioned opposite/across from it. Constrain width so it
+       never overflows into the logo's column. */
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    padding: 4px 8px;
+    gap: 3px;
+    font-size: 0.55rem;
+    border-radius: 14px;
+  }
+
+  .center::after {
+    border-radius: 12px;
+  }
+
+  .navbarBrand {
+    font-size: 0.85rem;
+  }
+
+  .active {
+    padding: 4px 6px;
+    text-decoration-thickness: 2px;
+    border-radius: 8px;
+  }
+
+  .connectBtn {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .center {
+    padding: 3px 6px;
+    gap: 1px;
+    font-size: 0.5rem;
+    border-radius: 12px;
+  }
+
+  .center::after {
+    border-radius: 10px;
+  }
+
+  .navbarBrand {
+    font-size: 0.75rem;
+  }
+
+  .active {
+    padding: 3px 5px;
+  }
+
+  .connectBtn {
+    padding: 4px 8px;
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .center {
+    padding: 2px 4px;
+    font-size: 0.45rem;
+  }
+
+  .active {
+    padding: 2px 4px;
+  }
 }

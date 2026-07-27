@@ -14,7 +14,7 @@ export default function MainHeader() {
       <div className="container-fluid">
         <div className="row align-items-center w-100">
           {/* LEFT */}
-          <div className="col-4 d-flex align-items-center gap-2">
+          <div className="col-6 col-md-4 order-1 d-flex align-items-center gap-2">
             <Image src="/pinoycoder.png" alt="logo" width={60} height={40} />
 
             <h1
@@ -25,7 +25,9 @@ export default function MainHeader() {
           </div>
 
           {/* CENTER */}
-          <div className="col-4 d-flex justify-content-center">
+          {/* Mobile: shares the row with LEFT (col-6), sits opposite/across the logo */}
+          {/* Desktop (md+): sits in the middle column */}
+          <div className="col-6 col-md-4 order-2 d-flex justify-content-center">
             <ul className={`navbar-nav flex-row ${styles.center}`}>
               {navLinks.map((item) => (
                 <li className="nav-item" key={item.path}>
@@ -43,9 +45,9 @@ export default function MainHeader() {
           </div>
 
           {/* RIGHT */}
-          <div className="col-4 d-flex justify-content-end">
-            {/* Desktop */}
-            <div className={`d-none d-md-flex gap-3 ${styles.social}`}>
+          {/* Hidden entirely on mobile (no grid space taken) since social links are desktop-only */}
+          <div className="col-md-4 order-3 d-none d-md-flex justify-content-end">
+            <div className={`gap-3 d-flex ${styles.social}`}>
               <a href="https://github.com/PinoyCoder29" className="">
                 <i className="bi bi-arrow-up-right"></i> Github
               </a>
@@ -58,26 +60,6 @@ export default function MainHeader() {
                 <i className="bi bi-arrow-up-right"></i> Resume
               </a>
             </div>
-
-            {/* Mobile */}
-            {/* <div className="dropdown d-md-none">
-              <button
-                className={`btn ${styles.connectBtn}`}
-                type="button"
-                data-bs-toggle="dropdown"
-              >
-                Social
-                <i className="bi bi-chevron-down ms-2"></i>
-              </button>
-
-              <ul
-                className={`dropdown-menu dropdown-menu-end ${styles.dropdownMenu}`}
-              >
-                <a href="">Github</a>
-                <a href="">LinkedIn</a>
-                <a href="">Resume</a>
-              </ul>
-            </div> */}
           </div>
         </div>
       </div>

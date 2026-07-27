@@ -180,7 +180,7 @@
 /* Mobile */
 @media (max-width: 768px) {
   .projectSection {
-    margin-top: 5rem;
+    margin: 0;
   }
 
   .sectionTitle {
