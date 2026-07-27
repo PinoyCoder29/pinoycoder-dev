@@ -11,7 +11,7 @@ export default function ProjectDetailLayout({
   children: React.ReactNode;
 }) {
   const [activeSection, setActiveSection] = useState(
-    `/${ProjectSidebarLinks[0].name}`,
+    `/projects/${ProjectSidebarLinks[0].name}`,
   );
 
   useEffect(() => {

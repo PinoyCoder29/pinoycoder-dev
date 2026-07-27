@@ -1,23 +1,23 @@
 export type sidebarlink = {
   name: string;
   path: string;
-  icon: string;
+  icons: string;
 };
 export const sidebarLinks: sidebarlink[] = [
   {
     name: "Home",
     path: "#home",
-    icon: "bi-house",
+    icons: "bi-house",
   },
   {
     name: "About",
     path: "#about",
-    icon: "bi-person",
+    icons: "bi-person",
   },
   {
     name: "Technologies",
     path: "#technologies",
-    icon: "bi-gear",
+    icons: "bi-gear",
   },
   // {
   //   name: "Projects",
@@ -27,6 +27,6 @@ export const sidebarLinks: sidebarlink[] = [
   {
     name: "Contact",
     path: "#contact",
-    icon: "bi-person-rolodex",
+    icons: "bi-person-rolodex",
   },
 ];

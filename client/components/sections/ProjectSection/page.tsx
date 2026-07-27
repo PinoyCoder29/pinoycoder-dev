@@ -61,16 +61,18 @@ export default function ProjectSection() {
             </div>
 
             <img
-              src={item.image}
+              src={item.hero?.image}
               alt={`${item.title} preview`}
               className={styles.projectImage}
             />
           </div>
 
           {/* Description */}
-          <h3 className={styles.subTitle}>{item.subTitle}</h3>
+          <h3 className={styles.subTitle}>{item.hero?.subtitle}</h3>
 
-          <p className={styles.projectDescription}>{item.description}</p>
+          <p className={styles.projectDescription}>
+            {item.overview?.description}
+          </p>
 
           {/* Tech Stack */}
           <div className={styles.techstackWrapper}>

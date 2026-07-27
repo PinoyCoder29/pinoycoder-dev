@@ -1,7 +1,7 @@
 import { Projects } from "../projects";
 
 export const ProjectSidebarLinks = Projects.map((project) => ({
-  name: `${project.title}`,
-  path: `/${project.slug}`,
-  icon: `${project.logo}`,
+  name: `${project.hero?.title}`,
+  path: `/projects/${project.slug}`,
+  icons: `${project.icons}`,
 }));

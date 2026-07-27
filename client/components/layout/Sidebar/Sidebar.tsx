@@ -73,7 +73,7 @@ export default function Sidebar({
                   isActive(item.path) ? styles.active : styles.navLink
                 }`}
               >
-                <i className={`bi ${item.icon}`}></i>
+                <i className={`bi ${item.icons}`}></i>
                 <span>{item.name}</span>
               </Link>
             </li>
@@ -95,7 +95,7 @@ export default function Sidebar({
                   isActive(item.path) ? styles.mobileActive : styles.mobileLink
                 }`}
               >
-                <i className={`bi  ${item.icon}`}></i>
+                <i className={`bi  ${item.icons}`}></i>
               </Link>
             </li>
           ))}

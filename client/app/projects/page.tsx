@@ -18,7 +18,7 @@ export default function Project() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveSection(`/${entry.target.id}`); // <-- ito yung binago
+            setActiveSection(`/projects/${entry.target.id}`); // <-- ito yung binago
           }
         });
       },
