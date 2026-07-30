@@ -33,15 +33,15 @@ export default function ProjectSection() {
         >
           {/* Logo */}
           <div className={styles.projectLogo}>
-            {item.logo ? (
-              <img src={item.logo} alt={`${item.title} logo`} />
+            {item.hero.logo ? (
+              <img src={item.hero.logo} alt={`${item.hero.title} logo`} />
             ) : (
-              <span>{item.title}</span>
+              <span>{item.hero.title}</span>
             )}
           </div>
 
           {/* Title */}
-          <h2 className={styles.projectTitle}>{item.title}</h2>
+          <h2 className={styles.projectTitle}>{item.hero.title}</h2>
 
           {/* Image */}
           <div className={styles.imageWrapper}>
@@ -51,7 +51,7 @@ export default function ProjectSection() {
               <span className={styles.dot3}></span>
 
               <a
-                href={item.path}
+                href={item.hero.path}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
@@ -62,7 +62,7 @@ export default function ProjectSection() {
 
             <img
               src={item.hero?.image}
-              alt={`${item.title} preview`}
+              alt={`${item.hero.title} preview`}
               className={styles.projectImage}
             />
           </div>
