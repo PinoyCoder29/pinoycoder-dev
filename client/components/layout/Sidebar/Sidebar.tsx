@@ -20,6 +20,7 @@ export default function Sidebar({
 }: SidebarProps) {
   const pathname = usePathname();
   const linkRefs = useRef<Record<string, HTMLLIElement | null>>({});
+  const mobileLinkRefs = useRef<Record<string, HTMLLIElement | null>>({});
 
   const isActive = (path: string) => {
     if (path.startsWith("#")) {
@@ -34,11 +35,22 @@ export default function Sidebar({
 
   useEffect(() => {
     if (!activeLink) return;
+
     const activeEl = linkRefs.current[activeLink];
     if (activeEl) {
       activeEl.scrollIntoView({
         behavior: "smooth",
         block: "nearest", // "center" kung gusto mong laging nasa gitna
+      });
+    }
+
+    // keep the active icon visible in the horizontally scrolling mobile bar
+    const activeMobileEl = mobileLinkRefs.current[activeLink];
+    if (activeMobileEl) {
+      activeMobileEl.scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest",
       });
     }
   }, [activeLink]);
@@ -47,55 +59,66 @@ export default function Sidebar({
     <>
       {/* Desktop */}
       <aside className={`d-none d-md-block ${styles.sidebar}`}>
-        <div className="text-center mb-3">
-          <Image
-            src="/pinoycoder.png"
-            alt="logo"
-            width={85}
-            height={60}
-            className={styles.logo}
-          />
-        </div>
+        <div className={styles.sidebarInner}>
+          <div className="text-center mb-3">
+            <Image
+              src="/pinoycoder.png"
+              alt="logo"
+              width={85}
+              height={60}
+              className={styles.logo}
+            />
+          </div>
 
-        <ul className={`nav flex-column gap-1 ${styles.navItem}`}>
-          {links.map((item) => (
-            <li
-              key={item.path}
-              ref={(el) => {
-                linkRefs.current[item.path] = el;
-              }}
-              className="nav-item"
-            >
-              <Link
-                href={item.path}
-                onClick={() => onLinkClick?.(item.path)}
-                className={`d-flex gap-2 nav-link ${
-                  isActive(item.path) ? styles.active : styles.navLink
-                }`}
+          <ul className={`nav flex-column gap-1 ${styles.navItem}`}>
+            {links.map((item) => (
+              <li
+                key={item.path}
+                ref={(el) => {
+                  linkRefs.current[item.path] = el;
+                }}
+                className="nav-item"
               >
-                <i className={`bi ${item.icons}`}></i>
-                <span>{item.name}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+                <Link
+                  href={item.path}
+                  onClick={() => onLinkClick?.(item.path)}
+                  className={`d-flex gap-2 nav-link ${
+                    isActive(item.path) ? styles.active : styles.navLink
+                  }`}
+                >
+                  <i className={`bi ${item.icons}`}></i>
+                  <span>{item.name}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </aside>
 
       {/* Mobile */}
       <nav
         className={`navbar border-top d-md-none fixed-bottom ${styles.mobilebar}`}
       >
-        <ul className="navbar-nav d-flex flex-row justify-content-around w-100">
+        <ul
+          className={`navbar-nav d-flex flex-row w-100 ${styles.mobileNavList}`}
+        >
           {links.map((item) => (
-            <li key={item.path} className="nav-item">
+            <li
+              key={item.path}
+              ref={(el) => {
+                mobileLinkRefs.current[item.path] = el;
+              }}
+              className={`nav-item ${styles.mobileNavItem}`}
+            >
               <Link
                 href={item.path}
                 onClick={() => onLinkClick?.(item.path)}
+                title={item.name}
                 className={`nav-link text-light ${
                   isActive(item.path) ? styles.mobileActive : styles.mobileLink
                 }`}
               >
-                <i className={`bi  ${item.icons}`}></i>
+                <i className={`bi ${item.icons}`}></i>
               </Link>
             </li>
           ))}

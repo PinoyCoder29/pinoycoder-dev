@@ -110,9 +110,7 @@
 
 @media (max-width: 767px) {
   .center {
-    /* Center nav now shares the row with the logo (col-6 each),
-       positioned opposite/across from it. Constrain width so it
-       never overflows into the logo's column. */
+    margin-left: -8rem;
     width: 100%;
     max-width: 100%;
     min-width: 0;
@@ -152,6 +150,7 @@
     gap: 1px;
     font-size: 0.5rem;
     border-radius: 12px;
+    margin-left: -6px;
   }
 
   .center::after {

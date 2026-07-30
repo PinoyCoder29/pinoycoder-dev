@@ -156,7 +156,7 @@
 }
 
 .projectTechstack {
-  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-size: clamp(2vw, 2.5rem, 3.5rem);
   padding: 12px;
   border-radius: 12px;
   border: 1px solid rgb(133, 131, 131);
@@ -212,6 +212,8 @@
   }
 
   .techstackWrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     justify-content: center;
   }
 }

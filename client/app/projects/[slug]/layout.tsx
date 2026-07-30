@@ -3,15 +3,18 @@
 import { useEffect, useState } from "react";
 import MainHeader from "@/components/layout/MainHeader/page";
 import Sidebar from "@/components/layout/Sidebar/Sidebar";
-import { ProjectSidebarLinks } from "@/config/navigation/projectSidebarLink";
+import { ProjectSidebarDetails } from "@/config/navigation/projectSidebarDetails";
 
 export default function ProjectDetailLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  // Must match the hash format used in ProjectSidebarDetails' `path`
+  // ("#overview"), not a route-style "/projects/overview" — these are
+  // in-page anchors, not real pages.
   const [activeSection, setActiveSection] = useState(
-    `/projects/${ProjectSidebarLinks[0].name}`,
+    ProjectSidebarDetails[0].path,
   );
 
   useEffect(() => {
@@ -21,7 +24,7 @@ export default function ProjectDetailLayout({
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveSection(`/${entry.target.id}`);
+            setActiveSection(`#${entry.target.id}`);
           }
         });
       },
@@ -36,7 +39,7 @@ export default function ProjectDetailLayout({
   return (
     <>
       <Sidebar
-        links={ProjectSidebarLinks}
+        links={ProjectSidebarDetails}
         activeLink={activeSection}
         onLinkClick={setActiveSection}
       />

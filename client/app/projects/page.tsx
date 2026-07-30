@@ -8,7 +8,7 @@ import MainHeader from "@/components/layout/MainHeader/page";
 
 export default function Project() {
   const [activeSection, setActiveSection] = useState(
-    `#${ProjectSidebarLinks[0].name}`,
+    ProjectSidebarLinks[0].path, // ✅ tugma na sa format ng link.path
   );
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export default function Project() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveSection(`/projects/${entry.target.id}`); // <-- ito yung binago
+            setActiveSection(`/projects/${entry.target.id}`); // ✅ tugma na rin
           }
         });
       },
@@ -28,6 +28,7 @@ export default function Project() {
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
   }, []);
+
   return (
     <>
       <MainHeader />
