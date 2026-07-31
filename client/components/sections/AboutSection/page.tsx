@@ -82,7 +82,7 @@ export default function AboutSection() {
                 <div className={styles.topBox}></div>
                 <div className={styles.bottomBox}>
                   <h1 className={styles.aboutName}>
-                    Jay-Vee S. Bico <span>Open to work</span>
+                    Jay-Vee S. Bico <span className="">Open to work</span>
                   </h1>
                   <p className="text-light">
                     Junior Web Developer | Next.js | React | TypeScript |

@@ -86,9 +86,10 @@
   border-radius: 25px;
 }
 
-/* Mobile bottom bar: horizontally scrollable instead of squeezing
-   11 icons into one fixed-width row (justify-content-around breaks
-   with more than ~5-6 items on small screens). */
+/* Mobile bottom bar: horizontally scrollable by default so that pages
+   with many links (e.g. 11) don't get squeezed into one fixed-width
+   row (justify-content-around breaks with more than ~5-6 items on
+   small screens). */
 .mobilebar {
   background: linear-gradient(
     45deg,
@@ -111,6 +112,20 @@
 
 .mobileNavItem {
   flex-shrink: 0;
+}
+
+/* Applied when the page has few links (e.g. Home with 4). Spreads the
+   icons evenly across the full bar width instead of clustering them
+   on the left, since there's no need to scroll. */
+.mobileNavEven {
+  justify-content: space-evenly !important;
+  overflow-x: visible;
+}
+
+.mobileNavItemEven {
+  flex: 1 1 0;
+  display: flex;
+  justify-content: center;
 }
 
 .mobileActive {

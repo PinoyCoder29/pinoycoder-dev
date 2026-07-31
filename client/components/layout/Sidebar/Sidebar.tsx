@@ -33,6 +33,12 @@ export default function Sidebar({
     return pathname === path;
   };
 
+  // Kapag konti lang ang links (e.g. 4-5 sa home), pantay-pantay
+  // ikalat sa mobile bar imbes na naka-cluster sa kaliwa. Kapag marami
+  // (e.g. 11), scrollable mode ang gagamitin para di sila magkasiksikan.
+  const MOBILE_EVEN_THRESHOLD = 5;
+  const isCompactMobileNav = links.length <= MOBILE_EVEN_THRESHOLD;
+
   useEffect(() => {
     if (!activeLink) return;
 
@@ -100,7 +106,9 @@ export default function Sidebar({
         className={`navbar border-top d-md-none fixed-bottom ${styles.mobilebar}`}
       >
         <ul
-          className={`navbar-nav d-flex flex-row w-100 ${styles.mobileNavList}`}
+          className={`navbar-nav d-flex flex-row w-100 ${
+            styles.mobileNavList
+          } ${isCompactMobileNav ? styles.mobileNavEven : ""}`}
         >
           {links.map((item) => (
             <li
@@ -108,7 +116,9 @@ export default function Sidebar({
               ref={(el) => {
                 mobileLinkRefs.current[item.path] = el;
               }}
-              className={`nav-item ${styles.mobileNavItem}`}
+              className={`nav-item ${styles.mobileNavItem} ${
+                isCompactMobileNav ? styles.mobileNavItemEven : ""
+              }`}
             >
               <Link
                 href={item.path}
