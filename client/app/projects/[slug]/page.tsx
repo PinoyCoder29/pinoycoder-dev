@@ -57,9 +57,9 @@ export default async function ProjectDetail({
                 fontSize: "0.65rem",
               }}
             >
-              pc
+              JV
             </div>
-            <span className="text-info">pinoycoder</span>
+            <span className="text-info">PinoyCoder</span>
             <span className="text-secondary">/</span>
             <span className="fw-semibold">{project.slug}</span>
           </div>
