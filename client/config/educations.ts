@@ -8,7 +8,7 @@ export interface EducationItem {
 
 export const education: EducationItem[] = [
   {
-    school: "Lutucan Central Elementary School",
+    school: "Guis Guis Talon Main Elementary School",
     degree: "Elementary",
     duration: "2010 - 2016",
     color: "#4c6ef5",
