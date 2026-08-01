@@ -98,6 +98,7 @@
   border: 1px solid grey;
   padding: 5px 10px;
   border-radius: 25px;
+  font-size: clamp(0.3rem, 1vw, 1rem);
 }
 
 /* =========================================

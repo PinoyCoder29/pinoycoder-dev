@@ -1,261 +1,435 @@
-.technologySection {
-  margin-top: 10rem;
-}
+.wrapper {
+  --accent: #3ada1c;
+  --panel-bg: rgb(20, 20, 22);
+  --panel-border: rgba(255, 255, 255, 0.08);
+  --row-bg: rgba(255, 255, 255, 0.03);
+  --row-border: rgba(255, 255, 255, 0.06);
+  --text-dim: rgb(150, 150, 155);
+  --text-dimmer: rgb(110, 110, 116);
 
-.technologyTitle {
-  font-size: clamp(2rem, 2vw, 2rem);
   display: flex;
-  justify-content: center;
-}
-
-.technologyTitle h1 {
-  font-weight: bold;
-}
-
-/* ── MAIN CONTAINER ── */
-.technologyContainer {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-}
-
-.technologyWrapper {
-  display: flex;
-  flex: 4;
   flex-direction: column;
+  gap: 18px;
+  margin-top: 4rem;
+}
+
+/* ── layout ── */
+.topRow {
+  display: flex;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.panel,
+.certPanel {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 22px;
+  padding: 22px;
+  box-sizing: border-box;
+}
+
+.panel:first-child {
+  flex: 1.5;
+  min-width: 0;
+}
+
+.panel:last-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.certPanel {
+  width: 100%;
+}
+
+/* ── shared header ── */
+.panelHeader {
+  display: flex;
+  align-items: center;
   gap: 10px;
+  margin-bottom: 18px;
 }
 
-/* ── SHARED TITLE STYLE ── */
-.frontEndTitle,
-.databaseTitle,
-.backendTitle,
-.deploymentTitle,
-.aiTitle,
-.toolTitle {
-  margin: 10px;
-  text-align: center;
-  background: linear-gradient(
-    45deg,
-    rgb(43, 43, 43),
-    rgb(104, 100, 100),
-    rgb(43, 43, 43)
-  );
-  border-radius: 25px;
-  border: 1px solid grey;
-  font-size: clamp(0.7rem, 2vw, 1.1rem);
+.headerIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  color: var(--text-dim);
 }
 
-/* ── SHARED CARD STYLE ── */
-.technologyFrontEnd,
-.technologyDatabase,
-.technologyBackend,
-.technologyDeployment,
-.technologyAI,
-.technologyTool {
-  border: 1px solid white;
-  border-radius: 25px;
-  background-color: rgb(29, 28, 28);
+.headerIcon svg {
+  width: 100%;
+  height: 100%;
 }
 
-/* ── FRONT-END ── */
+.headerTitle {
+  font-size: clamp(0.85rem, 1.4vw, 1.05rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgb(230, 230, 232);
+  margin: 0;
+}
+
+/* ── tabs ── */
+.tabRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--row-border);
+  padding-bottom: 16px;
+}
+
+.tabButton {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-dim);
+  font-size: clamp(0.65rem, 1vw, 0.82rem);
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tabButton:hover {
+  color: rgb(230, 230, 232);
+  background: var(--row-bg);
+}
+
+.tabButtonActive,
+.tabButtonActive:hover {
+  color: rgb(10, 10, 10);
+  background: var(--accent);
+  font-weight: 700;
+}
+
+/* ── tech grid ── */
+.techGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px 16px;
+}
+
 .techRow {
+  display: flex;
+  align-items: center;
   gap: 10px;
-  justify-content: center;
+  min-width: 0;
 }
 
-.techItem {
+.techIconBox {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: color-mix(
+    in srgb,
+    var(--tech-color, var(--accent)) 16%,
+    transparent
+  );
+  border: 1px solid
+    color-mix(in srgb, var(--tech-color, var(--accent)) 35%, transparent);
+  color: var(--tech-color, var(--accent));
+}
+
+.techIconBox svg {
+  width: 17px;
+  height: 17px;
+}
+
+.techName {
+  font-size: clamp(0.68rem, 1.1vw, 0.88rem);
+  color: rgb(215, 215, 218);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── education list ── */
+.eduList {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: rgba(128, 128, 128, 0.2);
-  border-radius: 25px;
-  padding: clamp(1px, 1vw, 15px);
-  margin: clamp(1px, 1vw, 10px);
-  box-sizing: border-box;
-}
-
-.techItem svg {
-  width: clamp(10px, 3vw, 30px);
-  height: 25px;
-  transition: 0.3s ease;
-}
-
-.techItem p {
-  font-size: clamp(0.3rem, 2vw, 1rem);
-}
-
-/* ── BOTTOM ROW (Database+Backend / Deployment+AI) ── */
-.bottomRow {
-  display: flex;
-  flex-direction: row;
   gap: 10px;
 }
 
-/* ── DATABASE ── */
-.technologyDatabase {
-  flex: 1;
+.eduRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--row-bg);
+  border: 1px solid var(--row-border);
+  border-radius: 16px;
+  padding: 12px 14px;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
 }
 
-.databaseRow {
+.eduRow:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.eduAvatar {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: rgb(10, 10, 10);
 }
 
-.databaseItem {
+.eduInfo {
+  min-width: 0;
+}
+
+.eduSchool {
+  font-size: clamp(0.68rem, 1.1vw, 0.85rem);
+  font-weight: 600;
+  color: rgb(230, 230, 232);
+  margin: 0 0 3px;
+}
+
+.eduMeta {
+  font-size: clamp(0.58rem, 0.95vw, 0.75rem);
+  color: var(--text-dim);
+  margin: 0;
+}
+
+.dot {
+  color: var(--text-dimmer);
+}
+
+/* ── certifications & achievements grid ── */
+.certGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.certCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  background: var(--row-bg);
+  border: 1px solid var(--row-border);
+  border-radius: 16px;
+  padding: 14px 16px;
+  text-decoration: none;
+  text-align: left;
+  font-family: inherit;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.certCard:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  background: color-mix(in srgb, var(--accent) 6%, var(--row-bg));
+}
+
+.certCard:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.certIconBox {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  color: var(--accent);
+}
+
+.certIconBox svg {
+  width: 18px;
+  height: 18px;
+}
+
+.certInfo {
+  min-width: 0;
+}
+
+.certTitle {
+  font-size: clamp(0.68rem, 1.1vw, 0.85rem);
+  font-weight: 600;
+  color: rgb(230, 230, 232);
+  margin: 0 0 3px;
+}
+
+.certMeta {
+  font-size: clamp(0.58rem, 0.95vw, 0.75rem);
+  color: var(--text-dim);
+  margin: 0;
+}
+
+/* ── certificate modal ── */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 1000;
+  animation: fadeIn 0.18s ease;
+}
+
+.modalContent {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  max-height: 88vh;
+  overflow-y: auto;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  animation: popIn 0.2s ease;
+}
+
+.modalClose {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--row-border);
+  border-radius: 50%;
+  color: rgb(220, 220, 224);
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+  z-index: 2;
+}
+
+.modalClose:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: rotate(90deg);
+}
+
+.modalClose svg {
+  width: 16px;
+  height: 16px;
+}
+
+.modalImageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgb(10, 10, 11);
+  border: 1px solid var(--row-border);
+}
+
+.modalImage {
+  object-fit: contain;
+}
+
+.modalNoImage {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: rgba(128, 128, 128, 0.2);
-  border-radius: 25px;
-  padding: clamp(1px, 1vw, 15px);
-  margin: clamp(1px, 1vw, 10px);
-  box-sizing: border-box;
-}
-
-.databaseItem p {
-  font-size: clamp(0.3rem, 2vw, 0.8rem);
-}
-
-.databaseItem svg {
-  width: 40px;
-  height: 30px;
-}
-
-/* ── BACKEND ── */
-.technologyBackend {
-  flex: 3;
-}
-
-.backendRow {
   justify-content: center;
+  gap: 12px;
+  aspect-ratio: 4 / 3;
+  border-radius: 14px;
+  background: rgb(10, 10, 11);
+  border: 1px dashed var(--row-border);
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  text-align: center;
+  padding: 20px;
 }
 
-.backendItem {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: rgba(128, 128, 128, 0.2);
-  border-radius: 25px;
-  padding: clamp(1px, 1vw, 15px);
-  margin: clamp(1px, 1vw, 10px);
-  box-sizing: border-box;
+.modalInfo {
+  margin-top: 16px;
+  padding-right: 30px;
 }
 
-.backendItem svg {
-  width: clamp(10px, 3vw, 30px);
-  height: 25px;
-  transition: 0.3s ease;
+.modalTitle {
+  font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+  font-weight: 700;
+  color: rgb(235, 235, 238);
+  margin: 0 0 4px;
 }
 
-.backendItem p {
-  font-size: clamp(0.3rem, 2vw, 0.8rem);
+.modalMeta {
+  font-size: clamp(0.72rem, 1.1vw, 0.85rem);
+  color: var(--text-dim);
+  margin: 0;
 }
 
-/* ── DEPLOYMENT ── */
-.technologyDeployment {
-  flex: 1;
+.modalLink {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: underline;
 }
 
-.deploymentRow {
-  justify-content: center; 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.deploymentItem {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: rgba(128, 128, 128, 0.2);
-  border-radius: 25px;
-  padding: clamp(1px, 1vw, 15px);
-  margin: clamp(1px, 1vw, 10px);
-  box-sizing: border-box;
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
-.deploymentItem svg {
-  width: clamp(10px, 3vw, 30px);
-  height: 25px;
-  transition: 0.3s ease;
-}
+/* ── responsive ── */
+@media (max-width: 900px) {
+  .topRow {
+    flex-direction: column;
+  }
 
-.deploymentItem p {
-  font-size: clamp(0.3rem, 2vw, 0.8rem);
-}
-
-/* ── AI MODELS ── */
-.technologyAI {
-  flex: 3;
-}
-
-.aiRow {
-  justify-content: center;
-}
-
-.aiItem {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: rgba(128, 128, 128, 0.2);
-  border-radius: 25px;
-  padding: clamp(1px, 1vw, 15px);
-  margin: clamp(1px, 1vw, 10px);
-  box-sizing: border-box;
-}
-
-.aiItem svg {
-  width: clamp(10px, 3vw, 30px);
-  height: 25px;
-  transition: 0.3s ease;
-}
-
-.aiItem p {
-  font-size: clamp(0.3rem, 2vw, 0.8rem);
-}
-
-/* ── TOOLS (right column) ── */
-.technologyTool {
-  flex: 1;
-  align-self: flex-start;
-}
-
-.toolRow {
-  justify-content: center;
-}
-
-.toolItem {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: rgba(128, 128, 128, 0.2);
-  border-radius: 25px;
-  padding: clamp(1px, 1vw, 15px);
-  margin: clamp(1px, 1vw, 10px);
-  box-sizing: border-box;
-}
-
-.toolItem svg {
-  width: clamp(10px, 3vw, 30px);
-  height: 25px;
-  transition: 0.3s ease;
-}
-
-.toolItem p {
-  font-size: clamp(0.4rem, 1vw, 1.5rem);
-}
-
-@media (max-width: 786px) {
-  .technologyTool {
-    flex: 1.4;
+  .techGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .certGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
