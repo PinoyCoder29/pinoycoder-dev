@@ -1,119 +1,301 @@
+/* ==========================================================================
+   Design tokens (GitHub dark, condensed)
+   ========================================================================== */
 .projectSection {
+  --bg-canvas: #0d1117;
+  --bg-card: #161b22;
+  --bg-card-hover: #1c2129;
+  --border-default: #30363d;
+  --border-hover: #58a6ff;
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted: #6e7681;
+  --accent-green: #3fb950;
+  --accent-blue: #58a6ff;
+  --radius: 12px;
+  --font-mono:
+    "SFMono-Regular", ui-monospace, "JetBrains Mono", Menlo, Consolas, monospace;
+
   margin-top: 7rem;
+  padding: 0 clamp(1rem, 4vw, 3rem);
+  color: var(--text-primary);
 }
+
+/* ==========================================================================
+   Section title
+   ========================================================================== */
 .sectionTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
   text-align: center;
-  font-weight: bold;
-  border: 1px solid white;
-  border-radius: 30px;
-  background: linear-gradient(
-    60deg,
-    rgb(0, 0, 0),
-    rgb(29, 32, 46),
-    rgb(0, 0, 0)
-  );
-  padding: 2rem;
+  padding: 2rem 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.sectionEyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: var(--accent-blue);
 }
 
 .sectionTitle p {
-  font-size: clamp(2.5rem, 6vw, 10rem);
-  text-shadow: 1px -7px 5px white;
-  background: linear-gradient(45deg, #b4afaf, #292828, #4c8391);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: rgb(100, 97, 97);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin: 0;
 }
 
+.sectionCount {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Grid
+   ========================================================================== */
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   Card
+   ========================================================================== */
 .projectContainer {
-  margin-top: 4rem;
-  border-radius: 25px;
-  border: 6px solid rgb(90, 86, 86);
-  padding: clamp(0rem, 5vw, 10rem);
-  padding-top: 1.6rem;
-  background: linear-gradient(
-    45deg,
-    rgb(0, 0, 0),
-    rgb(61, 56, 56),
-    rgb(0, 0, 0)
-  );
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-default);
+  background: var(--bg-card);
+  padding: 1.4rem;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.projectContainer:hover,
+.projectContainer:focus-visible {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px -12px rgba(1, 4, 9, 0.6);
+}
+
+.projectContainer:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   Header row: logo + title + view link
+   ========================================================================== */
+.repoHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.repoIdentity {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.projectLogo {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-canvas);
+  border: 1px solid var(--border-default);
+  overflow: hidden;
+}
+
+.projectLogo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.projectLogo span {
+  font-weight: 700;
+  color: var(--accent-blue);
 }
 
 .projectTitle {
-  text-align: center;
-  padding: 10px;
-  font-size: clamp(1.4rem, 2vw, 2.3rem);
-  font-weight: 800;
-}
-.projectLogo {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-.projectLogo img {
-  width: clamp(20px, 5vw, 60px);
-}
-
-.imageWrapper {
-  background-color: rgb(53, 50, 50);
-  border: 5px solid rgb(22, 17, 17);
-  padding-top: 10px;
-  border-radius: 25px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
   overflow: hidden;
-}
-.projectLink {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  margin: 10px;
-  gap: 10px;
-}
-.projectLink span {
-  border-radius: 50%;
-  width: 1rem;
-  height: 1rem;
-}
-.projectLink .dot1 {
-  background-color: rgb(17, 17, 216);
-}
-.projectLink .dot2 {
-  background-color: rgb(204, 218, 13);
-}
-.projectLink .dot3 {
-  background-color: rgb(168, 16, 16);
+  text-overflow: ellipsis;
 }
 
-.projectLink a {
+.repoLink {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-secondary);
   text-decoration: none;
-  color: rgb(201, 197, 197);
+  border: 1px solid var(--border-default);
+  border-radius: 20px;
+  padding: 0.35rem 0.75rem;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
 }
-.projectLink a:hover {
-  background-color: rgb(24, 21, 21);
-  padding: 5px;
-  border-radius: 10px;
+
+.repoLink:hover {
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+  background: rgba(88, 166, 255, 0.08);
 }
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  box-shadow: 0 0 0 0 rgba(63, 185, 80, 0.6);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(63, 185, 80, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(63, 185, 80, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(63, 185, 80, 0);
+  }
+}
+
+/* ==========================================================================
+   Preview image
+   ========================================================================== */
+.imageWrapper {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-default);
+  background: var(--bg-canvas);
+}
+
 .projectImage {
   width: 100%;
-  height: auto;
-  border-radius: 25px;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
 }
+
+.projectContainer:hover .projectImage {
+  transform: scale(1.04);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 0.75rem;
+  background: linear-gradient(
+    180deg,
+    rgba(13, 17, 23, 0) 50%,
+    rgba(13, 17, 23, 0.85) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.projectContainer:hover .imageOverlay {
+  opacity: 1;
+}
+
+.imageOverlay span {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   Text
+   ========================================================================== */
 .subTitle {
-  font-size: clamp(1rem, 2vw, 2rem);
-  margin-top: 15px;
-  color: rgb(255, 255, 255);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-top: 1rem;
 }
+
 .projectDescription {
-  font-size: clamp(0.6rem, 2vw, 1rem);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
+
+/* ==========================================================================
+   Tech stack as topic badges
+   ========================================================================== */
 .techstackWrapper {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-default);
+}
+
+.techItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--tech-color, var(--accent-blue));
+  background: var(--tech-bg, rgba(88, 166, 255, 0.1));
+  border: 1px solid
+    color-mix(in srgb, var(--tech-color, var(--accent-blue)) 35%, transparent);
 }
 
 .projectTechstack {
-  font-size: clamp(2.5rem, 3.5vw, 4rem);
-  background-color: rgb(92, 85, 85);
-  border: 1px solid rgb(133, 131, 131);
-  border-radius: 10px;
-  padding: 10px;
+  width: 14px;
+  height: 14px;
+}
+
+@media (max-width: 480px) {
+  .projectDescription {
+    font-size: 0.62rem;
+  }
 }
