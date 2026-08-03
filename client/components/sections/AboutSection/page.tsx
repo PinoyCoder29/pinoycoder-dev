@@ -9,8 +9,12 @@ import ScrollReveal from "@/components/ScrollReveal";
 export default function AboutSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const [videoProgress, setVideoProgress] = useState(0);
+
   const videoRef = useRef<HTMLVideoElement>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const transitionTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const clearTimer = () => {
     if (timerRef.current) {
@@ -19,52 +23,74 @@ export default function AboutSection() {
     }
   };
 
-  const goTo = useCallback((index: number) => {
-    clearTimer();
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setActiveIndex(index);
-      setIsTransitioning(false);
-    }, 300);
-  }, []);
+  const goTo = useCallback(
+    (index: number) => {
+      if (index === activeIndex) return;
+      clearTimer();
+      if (transitionTimerRef.current) clearTimeout(transitionTimerRef.current);
+      setIsTransitioning(true);
+      transitionTimerRef.current = setTimeout(() => {
+        setActiveIndex(index);
+        setVideoProgress(0);
+        setIsTransitioning(false);
+      }, 300);
+    },
+    [activeIndex],
+  );
 
   const goNext = useCallback(() => {
-    setActiveIndex((prev) => {
-      const next = (prev + 1) % achievements.length;
-      goTo(next);
-      return prev;
-    });
-  }, [goTo]);
+    goTo((activeIndex + 1) % achievements.length);
+  }, [activeIndex, goTo]);
 
   const goPrev = useCallback(() => {
-    setActiveIndex((prev) => {
-      const next = (prev - 1 + achievements.length) % achievements.length;
-      goTo(next);
-      return prev;
-    });
-  }, [goTo]);
+    goTo((activeIndex - 1 + achievements.length) % achievements.length);
+  }, [activeIndex, goTo]);
 
   useEffect(() => {
     const current = achievements[activeIndex];
-    if (current?.type === "image") {
+    if (current?.type === "image" && !isPaused) {
       timerRef.current = setTimeout(() => {
         goNext();
       }, current.duration ?? 3000);
     }
     return () => clearTimer();
-  }, [activeIndex, goNext]);
+  }, [activeIndex, isPaused, goNext]);
 
   useEffect(() => {
     const current = achievements[activeIndex];
     if (current?.type === "video" && videoRef.current) {
       videoRef.current.currentTime = 0;
-      videoRef.current.play();
+      if (!isPaused) videoRef.current.play();
     }
-  }, [activeIndex]);
+  }, [activeIndex, isPaused]);
+
+  useEffect(() => {
+    const current = achievements[activeIndex];
+    if (current?.type === "video" && videoRef.current) {
+      if (isPaused) videoRef.current.pause();
+      else videoRef.current.play();
+    }
+  }, [isPaused, activeIndex]);
+
+  useEffect(() => {
+    return () => {
+      clearTimer();
+      if (transitionTimerRef.current) clearTimeout(transitionTimerRef.current);
+    };
+  }, []);
 
   const handleVideoEnded = () => {
     goNext();
   };
+
+  const handleVideoTimeUpdate = () => {
+    const video = videoRef.current;
+    if (video && video.duration) {
+      setVideoProgress((video.currentTime / video.duration) * 100);
+    }
+  };
+
+  const current = achievements[activeIndex];
 
   return (
     <>
@@ -104,7 +130,7 @@ export default function AboutSection() {
                     <div className={styles.socialWrapper}>
                       {socialLinks.map((item) => (
                         <div className={styles.socialItem} key={item.name}>
-                          <a
+                          
                             href={item.path}
                             className={`bi ${item.icon}`}
                             style={{ color: item.color }}
@@ -140,44 +166,78 @@ export default function AboutSection() {
 
         <section id="about">
           <div className={styles.achievementsContainer}>
-            <div className={styles.achievementsContent}>
-              <p className={styles.achievementsTitle}>Achievements</p>
+            <div
+              className={styles.achievementsContent}
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+            >
+              <div className={styles.achievementsHeader}>
+                <p className={styles.achievementsTitle}>Achievements</p>
+                <span className={styles.achievementsCounter}>
+                  {String(activeIndex + 1).padStart(2, "0")} /{" "}
+                  {String(achievements.length).padStart(2, "0")}
+                </span>
+              </div>
+
               <div className={styles.carouselWrapper}>
+                <div className={styles.progressBar}>
+                  {achievements.map((item, i) => (
+                    <div className={styles.progressSegment} key={i}>
+                      {i === activeIndex && item.type === "image" && (
+                        <div
+                          key={activeIndex}
+                          className={styles.progressFillAnimated}
+                          style={{
+                            animationDuration: `${item.duration ?? 3000}ms`,
+                            animationPlayState: isPaused ? "paused" : "running",
+                          }}
+                        />
+                      )}
+                      {i === activeIndex && item.type === "video" && (
+                        <div
+                          className={styles.progressFillManual}
+                          style={{ width: `${videoProgress}%` }}
+                        />
+                      )}
+                      {i < activeIndex && (
+                        <div className={styles.progressFillDone} />
+                      )}
+                    </div>
+                  ))}
+                </div>
+
                 <div
                   className={styles.carouselTrack}
                   style={{
                     opacity: isTransitioning ? 0 : 1,
-                    transition: "opacity 0.3s ease",
                   }}
                 >
-                  {achievements[activeIndex].type === "image" ? (
+                  {current.type === "image" ? (
                     <img
                       key={activeIndex}
-                      src={achievements[activeIndex].src}
-                      className="d-block"
-                      alt={achievements[activeIndex].alt}
+                      src={current.src}
+                      alt={current.alt}
                     />
                   ) : (
                     <video
                       key={activeIndex}
                       ref={videoRef}
-                      className="d-block"
                       muted
                       playsInline
                       onEnded={handleVideoEnded}
+                      onTimeUpdate={handleVideoTimeUpdate}
                     >
-                      <source
-                        src={achievements[activeIndex].src}
-                        type="video/mp4"
-                      />
+                      <source src={current.src} type="video/mp4" />
                     </video>
                   )}
+                  <div className={styles.carouselOverlay} />
                 </div>
 
                 <button
-                  className={styles.carouselPrev}
+                  className={`${styles.carouselNav} ${styles.carouselPrev}`}
                   type="button"
                   onClick={goPrev}
+                  aria-label="Previous achievement"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -193,9 +253,10 @@ export default function AboutSection() {
                 </button>
 
                 <button
-                  className={styles.carouselNext}
+                  className={`${styles.carouselNav} ${styles.carouselNext}`}
                   type="button"
                   onClick={goNext}
+                  aria-label="Next achievement"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -209,17 +270,28 @@ export default function AboutSection() {
                     <polyline points="9 18 15 12 9 6" />
                   </svg>
                 </button>
+
+                <div className={styles.carouselDots}>
+                  {achievements.map((_, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      className={`${styles.dot} ${
+                        i === activeIndex ? styles.dotActive : ""
+                      }`}
+                      onClick={() => goTo(i)}
+                      aria-label={`Go to slide ${i + 1}`}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
 
             <div className={styles.achievementsDescription}>
-              <div className={styles.descriptionContent}>
-                <h2 className={styles.descriptionTitle}>
-                  {achievements[activeIndex].title}
-                </h2>
-                <p className={styles.descriptionText}>
-                  {achievements[activeIndex].description}
-                </p>
+              <div className={styles.descriptionContent} key={activeIndex}>
+                <span className={styles.descriptionTag}>Featured</span>
+                <h2 className={styles.descriptionTitle}>{current.title}</h2>
+                <p className={styles.descriptionText}>{current.description}</p>
               </div>
             </div>
           </div>
