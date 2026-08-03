@@ -79,6 +79,7 @@ export default function ProjectSection() {
                 src={item.hero?.image}
                 alt={`${item.hero.title} preview`}
                 className={styles.projectImage}
+                loading="lazy"
               />
               <div className={styles.imageOverlay}>
                 <span>Open preview</span>
