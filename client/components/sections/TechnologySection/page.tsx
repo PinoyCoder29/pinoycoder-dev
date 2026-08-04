@@ -150,7 +150,9 @@ export default function SkillsShowcase() {
                   {item.school.charAt(0)}
                 </span>
                 <div className={Styles.eduInfo}>
-                  <p className={Styles.eduSchool}>{item.school}</p>
+                  <a className={Styles.eduSchool} href={item.link}>
+                    {item.school}
+                  </a>
                   <p className={Styles.eduMeta}>
                     {item.degree} <span className={Styles.dot}>·</span>{" "}
                     {item.duration}
