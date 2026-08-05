@@ -18,6 +18,7 @@ import {
   SiPytorch,
   SiMediapipe,
   SiKdeneon,
+  SiPostman,
 } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
 import { SiExpress, SiPostgresql, SiMysql, SiFastapi } from "react-icons/si";
@@ -77,4 +78,9 @@ export const Tools = [
   { name: "Git", icon: FaGitAlt, color: "#F05032" },
   { name: "GitHub", icon: FaGithub, color: "#FFFFFF" },
   { name: "VS Code", icon: BiLogoVisualStudio, color: "#007ACC" },
+  {
+    name: "Postman",
+    icon: SiPostman,
+    color: "#FF6C37",
+  },
 ];
